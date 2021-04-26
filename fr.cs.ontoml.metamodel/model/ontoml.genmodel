@@ -1,0 +1,1511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.cs.impex.pivotmodel.ontomlmodel/src" modelPluginID="fr.cs.impex.pivotmodel.ontomlmodel"
+    modelName="Ontoml" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.xsd.ecore.importer" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>../../OntoMLXSDFiles/ontoml.xsd</foreignModel>
+  <genPackages prefix="Ontoml" basePackage="iso.std.iso.is._13584._32.ed._1.tech.xml.schema"
+      resource="XML" disposableProviderFactory="true" loadInitialization="true" literalsInterface="false"
+      ecorePackage="ontoml.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ontoml.ecore#//ILLUSTRATIONTYPEType">
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//ILLUSTRATIONTYPEType/SCHEMATICDRAWING"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//ILLUSTRATIONTYPEType/REALISTICPICTURE"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//ILLUSTRATIONTYPEType/NOTSTATICPICTURE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ontoml.ecore#//SIPREFIXType">
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/EXA"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/PETA"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/TERA"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/GIGA"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/MEGA"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/KILO"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/HECTO"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/DECA"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/DECI"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/CENTI"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/MILLI"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/MICRO"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/NANO"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/PICO"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/FEMTO"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIPREFIXType/ATTO"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ontoml.ecore#//SIUNITNAMEType">
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/METRE"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/GRAM"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/SECOND"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/AMPERE"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/KELVIN"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/MOLE"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/CANDELA"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/RADIAN"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/STERADIAN"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/HERTZ"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/NEWTON"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/PASCAL"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/JOULE"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/WATT"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/COULOMB"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/VOLT"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/FARAD"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/OHM"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/SIEMENS"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/WEBER"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/TESLA"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/HENRY"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/DEGREECELSIUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/LUMEN"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/LUX"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/BECQUEREL"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/GRAY"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//SIUNITNAMEType/SIEVERT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ontoml.ecore#//STANDARDSIZEType">
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//STANDARDSIZEType/a6Illustration"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//STANDARDSIZEType/a9Illustration"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ontoml.ecore#//VALUESPECIFICATIONType">
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//VALUESPECIFICATIONType/CODED"/>
+      <genEnumLiterals ecoreEnumLiteral="ontoml.ecore#//VALUESPECIFICATIONType/EXPLICIT"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="ontoml.ecore#//ABSOLUTEURLTYPEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//APosterioriSemanticRelationId"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//ClassId"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//ClassRefType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//ClassRefType1"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//ClassRefType2"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//ClassRefType3"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//ClassRefType4"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//ClassRefType5"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//ConstraintId"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//COUNTRYCODEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//CURRENCYCODEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//CurrencyId"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//DataTypeId"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//DATETYPEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//DETCLASSIFICATIONTYPEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//DicUnitId"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//DicValueId"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//DocumentId"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//DOCUMENTIDENTIFIERNAMEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//EptosGUID"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//EXTERNALITEMCODETYPEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//FreeRelationDefinitionId"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//FreeRelationEndId"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//HTTPDIRECTORYNAMETYPEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//HTTPFILENAMETYPEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//ILLUSTRATIONTYPETypeObject"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//KEYWORDREFERENCEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//KEYWORDTYPEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//LANGUAGECODEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//OntologyId"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//POSITIVELENGTHMEASUREType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//POSITIVEPLANEANGLEMEASUREType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//POSITIVERATIOMEASUREType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//PREFERREDNAMETYPEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//PROGRAMREFERENCENAMEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//PropertyId"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//ReusableNameId"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//REVISIONTYPEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//SHORTNAMETYPEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//SIPREFIXTypeObject"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//SIUNITNAMETypeObject"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//STANDARDSIZETypeObject"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//STATUSType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//SUPPLIERCODETYPEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//SupplierId"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//SYNONYMOUSNAMETYPEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//SYNONYMREFERENCEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//VALUECODETYPEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//VALUEFORMATTYPEType"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//VALUESPECIFICATIONTypeObject"/>
+    <genDataTypes ecoreDataType="ontoml.ecore#//VERSIONTYPEType"/>
+    <genClasses ecoreClass="ontoml.ecore#//ALTERNATIVEUNITSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ALTERNATIVEUNITSType/dicUnit"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//ANYTYPEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ANYTYPEType/constraints"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//APOSTERIORICASEOFType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//APOSTERIORICASEOFType/caseOfSuper"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//APOSTERIORICASEOFType/caseOfSub"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//APOSTERIORICASEOFType/correspondingProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//APOSTERIORISEMANTICRELATIONSHIPSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//APOSTERIORISEMANTICRELATIONSHIPSType/aPosterioriSemanticRelationship"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//APOSTERIORISEMANTICRELATIONSHIPType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//APOSTERIORISEMANTICRELATIONSHIPType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//APOSTERIORIVIEWOFType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//APOSTERIORIVIEWOFType/item"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//APOSTERIORIVIEWOFType/model"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//APOSTERIORIVIEWOFType/correspondingProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//ARRAYTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ARRAYTYPEType/bound1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ARRAYTYPEType/bound2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ARRAYTYPEType/valueType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ARRAYTYPEType/uniqueness"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ARRAYTYPEType/areOptional"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//ASSIGNEDVALUEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/stringValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/bagValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/booleanValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/complexValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/compositeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/controlledValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/currencyValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/dateValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/dateTimeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/fileValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/integerValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/itemReferenceValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/localizedTextValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/measureQualifiedNumberValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/measureRangeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/measureSingleNumberValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/nullValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/rationalValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/realValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/sequenceValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/setValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/timeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/yearMonthValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ASSIGNEDVALUEType/yearValue"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//AUTHORSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//AUTHORSType/person"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//AXIS1PLACEMENTTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//AXIS1PLACEMENTTYPEType/classRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//AXIS2PLACEMENT2DTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//AXIS2PLACEMENT2DTYPEType/classRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//AXIS2PLACEMENT3DTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//AXIS2PLACEMENT3DTYPEType/classRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//BAGTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//BAGTYPEType/bound1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//BAGTYPEType/bound2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//BAGTYPEType/valueType"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//BOOLEANTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//BOOLEANTYPEType/valueFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CARDINALITYCONSTRAINTType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CARDINALITYCONSTRAINTType/bound1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CARDINALITYCONSTRAINTType/bound2"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CATEGORIZATIONCLASSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CATEGORIZATIONCLASSType/categorizationClassSuperclasses"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CLASSCONSTANTVALUESType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSCONSTANTVALUESType/classValueAssignment"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//CLASSCONSTRAINTType"/>
+    <genClasses ecoreClass="ontoml.ecore#//CLASSESREFERENCEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSESREFERENCEType/class"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//CLASSEXTENSIONType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSEXTENSIONType/dictionaryDefinition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CLASSEXTENSIONType/contentVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CLASSEXTENSIONType/contentRevision"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSEXTENSIONType/recommendedPresentation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSEXTENSIONType/classification"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSEXTENSIONType/instanceIdentification"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSEXTENSIONType/population"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CLASSEXTENSIONType/tableLike"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CLASSIFICATIONType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSIFICATIONType/propertyClassification"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CLASSPRESENTATIONONPAPERType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSPRESENTATIONONPAPERType/illustration"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CLASSPRESENTATIONONSCREENType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSPRESENTATIONONSCREENType/illustration"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CLASSREFERENCEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CLASSREFERENCEType/classRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CLASSREFERENCETYPEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSREFERENCETYPEType/domain"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//CLASSType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CLASSType/dateOfOriginalDefinition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CLASSType/dateOfCurrentVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CLASSType/dateOfCurrentRevision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CLASSType/revision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CLASSType/status"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/translation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/sourceLanguage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CLASSType/isDeprecated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/isDeprecatedInterpretation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/preferredName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/synonymousNames"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/shortName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/definition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/sourceDocOfDefinition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/note"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/remark"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/itsSuperclass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/describedBy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/definedTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/definedDocuments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/constraints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CLASSType/hierarchicalPosition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/keywords"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/subClassProperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/classConstantValues"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/geometricRepresentationContext"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/globalUnitContext"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/keywordReferences"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSType/freeRelations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CLASSType/guid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CLASSType/guid2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CLASSType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CLASSVALUEASSIGNMENTType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSVALUEASSIGNMENTType/superClassDefinedProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CLASSVALUEASSIGNMENTType/assignedValue"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONDITIONDETType"/>
+    <genClasses ecoreClass="ontoml.ecore#//CONFIGURATIONCONTROLCONSTRAINTType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONFIGURATIONCONTROLCONSTRAINTType/precondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONFIGURATIONCONTROLCONSTRAINTType/postcondition"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONSTRAINTORCONSTRAINTIDType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONSTRAINTORCONSTRAINTIDType/constraintDefinition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CONSTRAINTORCONSTRAINTIDType/constraintRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONSTRAINTSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONSTRAINTSType/constraint"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//CONSTRAINTType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CONSTRAINTType/constraintId"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONTAINEDCLASSESType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONTAINEDCLASSESType/class"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONTAINEDCLASSEXTENSIONSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONTAINEDCLASSEXTENSIONSType/classExtension"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONTAINEDDATATYPESType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONTAINEDDATATYPESType/datatype"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONTAINEDDOCUMENTSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONTAINEDDOCUMENTSType/document"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONTAINEDKEYWORDSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONTAINEDKEYWORDSType/keyword"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONTAINEDPROPERTIESType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONTAINEDPROPERTIESType/property"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONTAINEDSUPPLIERSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONTAINEDSUPPLIERSType/supplier"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONTAINEDSYNONYMSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONTAINEDSYNONYMSType/synonym"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONTEXTDEPENDENTUNITType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CONTEXTDEPENDENTUNITType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONTEXTPARAMETERCONSTRAINTSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONTEXTPARAMETERCONSTRAINTSType/integrityConstraint"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONTEXTPARAMICONType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONTEXTPARAMICONType/a6Illustration"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONTEXTRESTRICTIONCONSTRAINTType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONTEXTRESTRICTIONCONSTRAINTType/contextParameterConstraints"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CONVERSIONBASEDUNITType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CONVERSIONBASEDUNITType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//CONVERSIONBASEDUNITType/valueComponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CONVERSIONBASEDUNITType/unitComponent"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CORRESPONDINGPROPERTIESType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CORRESPONDINGPROPERTIESType/mapping"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//CREATEICONType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//CREATEICONType/illustration"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DATATYPEREFERENCEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DATATYPEREFERENCEType/datatypeRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DATATYPESREFERENCEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DATATYPESREFERENCEType/datatype"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DATATYPEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DATATYPEType/nameScope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DATATYPEType/dateOfOriginalDefinition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DATATYPEType/dateOfCurrentVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DATATYPEType/dateOfCurrentRevision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DATATYPEType/revision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DATATYPEType/status"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DATATYPEType/translation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DATATYPEType/sourceLanguage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DATATYPEType/isDeprecated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DATATYPEType/isDeprecatedInterpretation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DATATYPEType/preferredName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DATATYPEType/synonymousNames"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DATATYPEType/shortName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DATATYPEType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DATATYPEType/typeDefinition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DATATYPEType/valueSpecification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DATATYPEType/guid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DATATYPEType/guid2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DATATYPEType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DATEDATATYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DATEDATATYPEType/valueFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DATETIMEDATATYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DATETIMEDATATYPEType/valueFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DEPENDENTPDETType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DEPENDENTPDETType/dependsOn"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DERIVEDUNITELEMENTType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DERIVEDUNITELEMENTType/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DERIVEDUNITELEMENTType/exponent"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DERIVEDUNITType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DERIVEDUNITType/derivedUnitElement"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DICTIONARIESREFERENCEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICTIONARIESREFERENCEType/dictionary"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DICTIONARYINSTANDARDFORMATType"/>
+    <genClasses ecoreClass="ontoml.ecore#//DICTIONARYREFERENCEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DICTIONARYREFERENCEType/dictionaryRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DICTIONARYType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DICTIONARYType/isComplete"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICTIONARYType/updates"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DICTIONARYType/updateAgreement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICTIONARYType/referencedDictionaries"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICTIONARYType/responsibleSupplier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICTIONARYType/containedClasses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICTIONARYType/aPosterioriSemanticRelationships"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICTIONARYType/containedSuppliers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICTIONARYType/containedProperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICTIONARYType/containedDocuments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICTIONARYType/containedDatatypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICTIONARYType/containedKeywords"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICTIONARYType/containedSynonyms"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DICUNITREFERENCEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DICUNITREFERENCEType/dicUnitRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DICUNITSREFERENCEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICUNITSREFERENCEType/dicUnit"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DICUNITType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICUNITType/structuredRepresentation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICUNITType/stringRepresentation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DICUNITType/unitRef"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//DICVALUEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICVALUEType/preferredName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICVALUEType/synonymousNames"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICVALUEType/shortName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICVALUEType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICVALUEType/sourceDocOfDefinition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICVALUEType/definition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DICVALUEType/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DICVALUEType/isDeprecated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DICVALUEType/isDeprecatedInterpretation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DICVALUEType/valueSpecification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DICVALUEType/dateOfOriginalDefinition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DICVALUEType/dateOfCurrentVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DICVALUEType/dateOfCurrentRevision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DICVALUEType/guid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DICVALUEType/guid2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DICVALUEType/valueMeaningId"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DIMENSIONALEXPONENTSType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DIMENSIONALEXPONENTSType/lengthExponent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DIMENSIONALEXPONENTSType/massExponent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DIMENSIONALEXPONENTSType/timeExponent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DIMENSIONALEXPONENTSType/electricCurrentExponent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DIMENSIONALEXPONENTSType/thermodynamicTemperatureExponent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DIMENSIONALEXPONENTSType/amountOfSubstanceExponent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DIMENSIONALEXPONENTSType/luminousIntensityExponent"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DOCUMENTCONTENTType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DOCUMENTCONTENTType/revision"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DOCUMENTIDENTIFIERNAMELABELType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DOCUMENTIDENTIFIERNAMELABELType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DOCUMENTIDENTIFIERNAMELABELType/countryCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DOCUMENTIDENTIFIERNAMELABELType/languageCode"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DOCUMENTIDENTIFIERType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTIDENTIFIERType/label"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DOCUMENTREFERENCEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DOCUMENTREFERENCEType/documentRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DocumentRoot/aPosterioriSemanticRelationship"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DocumentRoot/class"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DocumentRoot/constraint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DocumentRoot/datatype"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DocumentRoot/dicUnit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DocumentRoot/dicValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DocumentRoot/document"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DocumentRoot/keyword"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DocumentRoot/ontoml"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DocumentRoot/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DocumentRoot/supplier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DocumentRoot/synonym"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DOCUMENTSREFERENCEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTSREFERENCEType/document"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DOCUMENTType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTType/nameScope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DOCUMENTType/dateOfOriginalDefinition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DOCUMENTType/dateOfCurrentVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DOCUMENTType/dateOfCurrentRevision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DOCUMENTType/revision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DOCUMENTType/status"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTType/translation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTType/sourceLanguage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DOCUMENTType/isDeprecated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTType/isDeprecatedInterpretation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTType/preferredName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTType/synonymousNames"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTType/shortName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTType/definition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTType/note"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTType/remark"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTType/authors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTType/publishingOrganisation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOCUMENTType/content"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DOCUMENTType/guid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DOCUMENTType/guid2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//DOCUMENTType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//DOMAINCONSTRAINTSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//DOMAINCONSTRAINTSType/constraint"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//DOMAINCONSTRAINTType"/>
+    <genClasses ecoreClass="ontoml.ecore#//ENUMERATIONCONSTRAINTType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ENUMERATIONCONSTRAINTType/subset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ENUMERATIONCONSTRAINTType/valueMeaning"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//EXPLICITFUNCTIONALMODELCLASSEXTENSIONType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//EXPLICITFUNCTIONALMODELCLASSEXTENSIONType/requiredItemValues"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//EXPLICITFUNCTIONALMODELCLASSEXTENSIONType/availableViewsIcon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//EXPLICITFUNCTIONALMODELCLASSEXTENSIONType/availableViewsMsg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//EXPLICITFUNCTIONALMODELCLASSEXTENSIONType/contextParamIcon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//EXPLICITFUNCTIONALMODELCLASSEXTENSIONType/contextParamMsg"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//EXPLICITITEMCLASSEXTENSIONType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//EXPLICITITEMCLASSEXTENSIONType/accessIcon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//EXPLICITITEMCLASSEXTENSIONType/contentMsg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//EXPLICITITEMCLASSEXTENSIONType/createIcon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//EXPLICITITEMCLASSEXTENSIONType/createMsg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//EXPLICITITEMCLASSEXTENSIONType/classPresentationOnPaper"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//EXPLICITITEMCLASSEXTENSIONType/classPresentationOnScreen"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//EXTERNALFILESType"/>
+    <genClasses ecoreClass="ontoml.ecore#//EXTERNALGRAPHICSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//EXTERNALGRAPHICSType/representation"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//EXTERNALRESOURCEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//EXTERNALRESOURCEType/file"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//FILTERType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FILTERType/referencedProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FILTERType/domain"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//FMCLASSVIEWOFType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/createdView"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/vCVRange"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/importedPropertiesFromView"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/importedTypesFromView"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/importedDocumentsFromView"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/importedConstraintsFromView"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/caseOf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/importedPropertiesFromModels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/importedTypesFromModels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/importedDocumentsFromModels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/importedConstraintsFromModels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/viewOf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/importedPropertiesFromItem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/importedTypesFromItem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/importedDocumentsFromItem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FMCLASSVIEWOFType/importedConstraintsFromItem"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//FREERELATIONDEFINITIONREFType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//FREERELATIONDEFINITIONREFType/defintionRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//FREERELATIONENDREFType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//FREERELATIONENDREFType/elementRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//FREERELATIONSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FREERELATIONSType/relation"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//FREERELATIONType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FREERELATIONType/definition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FREERELATIONType/end"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//FUNCTIONALMODELCLASSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FUNCTIONALMODELCLASSType/createdView"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FUNCTIONALMODELCLASSType/vCVRange"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FUNCTIONALMODELCLASSType/importedPropertiesFromView"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FUNCTIONALMODELCLASSType/importedTypesFromView"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FUNCTIONALMODELCLASSType/importedDocumentsFromView"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FUNCTIONALMODELCLASSType/importedCosntraintsFromView"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FUNCTIONALMODELCLASSType/caseOf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FUNCTIONALMODELCLASSType/importedPropertiesFromModels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FUNCTIONALMODELCLASSType/importedTypesFromModels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FUNCTIONALMODELCLASSType/importedDocumentsFromModels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//FUNCTIONALMODELCLASSType/importedConstraintsFromModels"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//GENERALTEXTType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//GENERALTEXTType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//GENERALTEXTType/countryCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//GENERALTEXTType/languageCode"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//GEOMETRICCONTEXTType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//GEOMETRICCONTEXTType/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//GEOMETRICCONTEXTType/coordinateSoaceDimension"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//GEOMETRICUNITCONTEXTType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//GEOMETRICUNITCONTEXTType/lengthUnit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//GEOMETRICUNITCONTEXTType/lengthUnitId"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//GEOMETRICUNITCONTEXTType/langleUnit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//GEOMETRICUNITCONTEXTType/angleUnitId"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//GRAPHICSType"/>
+    <genClasses ecoreClass="ontoml.ecore#//HEADERType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//HEADERType/globalLanguage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HEADERType/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HEADERType/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HEADERType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HEADERType/dateTimeStamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HEADERType/author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HEADERType/organisation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HEADERType/preProcessorVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HEADERType/originatingSystem"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HEADERType/authorisation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//HEADERType/ontomlInformation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//HEADERType/ontomlStructure"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//HEADERType/supportedVep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HEADERType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//HTTPFILEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HTTPFILEType/httpFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HTTPFILEType/fileName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HTTPFILEType/dirName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HTTPFILEType/countryCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//HTTPFILEType/languageCode"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//IDENTIFIEDDOCUMENTType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//IDENTIFIEDDOCUMENTType/documentIdentifier"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//ILLUSTRATIONType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ILLUSTRATIONType/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ILLUSTRATIONType/kindOfContent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ILLUSTRATIONType/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ILLUSTRATIONType/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ILLUSTRATIONType/standardSize"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//INFORMATIONType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//INFORMATIONType/revision"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//INFORMATIONType/preferredName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//INFORMATIONType/synonymousNames"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//INFORMATIONType/shortName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//INFORMATIONType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//INFORMATIONType/note"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//INFORMATIONType/remark"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//INTCURRENCYTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//INTCURRENCYTYPEType/valueFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//INTCURRENCYTYPEType/currency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//INTCURRENCYTYPEType/currencyId"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//INTDICVALUEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//INTDICVALUEType/valueCode"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//INTEGRITYCONSTRAINTType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//INTEGRITYCONSTRAINTType/redefinedDomain"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//INTMEASURETYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//INTMEASURETYPEType/valueFormat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//INTMEASURETYPEType/unit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//INTMEASURETYPEType/alternativeUnits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//INTMEASURETYPEType/unitId"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//INTMEASURETYPEType/alternativeUnitIds"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//INTTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//INTTYPEType/valueFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//ITEMCLASSCASEOFType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ITEMCLASSCASEOFType/simplifiedDrawing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ITEMCLASSCASEOFType/codedName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ITEMCLASSCASEOFType/instanceSharable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ITEMCLASSCASEOFType/isCaseOf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ITEMCLASSCASEOFType/importedProperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ITEMCLASSCASEOFType/importedTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ITEMCLASSCASEOFType/importedDocuments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ITEMCLASSCASEOFType/importedConstraints"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//ITEMCLASSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ITEMCLASSType/simplifiedDrawing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ITEMCLASSType/codedName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ITEMCLASSType/instanceSharable"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//ITSVALUESType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ITSVALUESType/dicValue"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//KEYWORDLABELType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//KEYWORDLABELType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//KEYWORDLABELType/countryCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//KEYWORDLABELType/languageCode"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//KEYWORDREFERENCESType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//KEYWORDREFERENCESType/keywordRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//KEYWORDType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//KEYWORDType/label"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//LANGUAGEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//LANGUAGEType/countryCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//LANGUAGEType/languageCode"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//LEVELType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//LEVELType/min"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//LEVELType/nom"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//LEVELType/typ"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//LEVELType/max"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//LEVELTYPEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//LEVELTYPEType/levels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//LEVELTYPEType/valueType"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//LIBRARYIIMIDENTIFICATIONType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//LIBRARYIIMIDENTIFICATIONType/sourceDocumentIdentifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//LIBRARYIIMIDENTIFICATIONType/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//LIBRARYIIMIDENTIFICATIONType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//LIBRARYIIMIDENTIFICATIONType/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//LIBRARYIIMIDENTIFICATIONType/application"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//LIBRARYIIMIDENTIFICATIONType/level"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//LIBRARYINSTANDARDFORMATType"/>
+    <genClasses ecoreClass="ontoml.ecore#//LIBRARYType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//LIBRARYType/containedClassExtensions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//LIBRARYType/responsibleSupplier"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//LISTTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//LISTTYPEType/bound1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//LISTTYPEType/bound2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//LISTTYPEType/valueType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//LISTTYPEType/uniqueness"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//MAPPINGFUNCTIONType"/>
+    <genClasses ecoreClass="ontoml.ecore#//MATHEMATICALSTRINGType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//MATHEMATICALSTRINGType/textRepresentation"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//MESSAGEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//MESSAGEType/code"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//NAMEDTYPEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//NAMEDTYPEType/referredType"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//NAMEDUNITType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//NAMEDUNITType/dimensions"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//NONDEPENDENTPDETType"/>
+    <genClasses ecoreClass="ontoml.ecore#//NONINSTANTIABLEFUNCTIONALVIEWCLASSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//NONINSTANTIABLEFUNCTIONALVIEWCLASSType/viewControlVariables"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//NONQUANTITATIVECODETYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//NONQUANTITATIVECODETYPEType/valueFormat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//NONQUANTITATIVECODETYPEType/itsValues"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//NONQUANTITATIVECODETYPEType/sourceDocOfValueDomain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//NONQUANTITATIVECODETYPEType/definition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//NONQUANTITATIVECODETYPEType/icon"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//NONQUANTITATIVEINTTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//NONQUANTITATIVEINTTYPEType/valueFormat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//NONQUANTITATIVEINTTYPEType/itsValues"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//NONQUANTITATIVEINTTYPEType/sourceDocOfValueDomain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//NONQUANTITATIVEINTTYPEType/definition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//NONQUANTITATIVEINTTYPEType/icon"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//NONSIUNITType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//NONSIUNITType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//NONTRANSLATABLESTRINGTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//NONTRANSLATABLESTRINGTYPEType/valueFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//NUMBERTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//NUMBERTYPEType/valueFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//ONTOMLType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ONTOMLType/header"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ONTOMLType/dictionary"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//ONTOMLType/library"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//ORGANIZATIONType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ORGANIZATIONType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ORGANIZATIONType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//ORGANIZATIONType/description"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//PERSONType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PERSONType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PERSONType/lastName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PERSONType/firstName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PERSONType/middleNames"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PERSONType/prefixTitles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PERSONType/suffixTitles"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//PLACEMENTTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PLACEMENTTYPEType/classRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//POSTCONDITIONType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//POSTCONDITIONType/filter"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//PRECONDITIONType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PRECONDITIONType/filter"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//PREFERREDNAMELABELType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PREFERREDNAMELABELType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PREFERREDNAMELABELType/countryCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PREFERREDNAMELABELType/languageCode"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//PREFERREDNAMEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PREFERREDNAMEType/label"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//PROGRAMREFERENCETYPEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROGRAMREFERENCETYPEType/inParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROGRAMREFERENCETYPEType/outParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROGRAMREFERENCETYPEType/inoutParameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROGRAMREFERENCETYPEType/classRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//PROPERTIESREFERENCEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTIESREFERENCEType/property"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//PROPERTYCLASSIFICATIONType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYCLASSIFICATIONType/itsValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYCLASSIFICATIONType/propDef"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//PROPERTYCONSTRAINTType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYCONSTRAINTType/constrainedProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//PROPERTYMAPPINGType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYMAPPINGType/domain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYMAPPINGType/range"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYMAPPINGType/function"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//PROPERTYREFERENCEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYREFERENCEType/orderNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYREFERENCEType/propertyRef"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//PROPERTYType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/nameScope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYType/dateOfOriginalDefinition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYType/dateOfCurrentVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYType/dateOfCurrentRevision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYType/revision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYType/status"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/translation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/sourceLanguage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYType/isDeprecated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/isDeprecatedInterpretation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/preferredName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/synonymousNames"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/shortName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/definition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/sourceDocOfDefinition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/note"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/remark"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/preferredSymbol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/synonymousSymbols"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/figure"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYType/detClassification"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/domain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/formula"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/synonymReferences"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYType/suggestedValueList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYType/freeRelations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYType/guid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYType/guid2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//PROPERTYVALUERECOMMENDEDPRESENTATIONType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYVALUERECOMMENDEDPRESENTATIONType/propDef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//PROPERTYVALUERECOMMENDEDPRESENTATIONType/recommendedPresentationUnit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//PROPERTYVALUERECOMMENDEDPRESENTATIONType/recommendedPresentationFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//RANGECONSTRAINTType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//RANGECONSTRAINTType/minValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//RANGECONSTRAINTType/maxValue"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//RATIONALMEASURETYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//RATIONALMEASURETYPEType/valueFormat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//RATIONALMEASURETYPEType/unit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//RATIONALMEASURETYPEType/alternativeUnits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//RATIONALMEASURETYPEType/unitId"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//RATIONALMEASURETYPEType/alternativeUnitIds"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//RATIONALTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//RATIONALTYPEType/valueFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//REALCURRENCYTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REALCURRENCYTYPEType/valueFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REALCURRENCYTYPEType/currency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REALCURRENCYTYPEType/currencyId"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//REALMEASURETYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REALMEASURETYPEType/valueFormat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//REALMEASURETYPEType/unit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//REALMEASURETYPEType/alternativeUnits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//REALMEASURETYPEType/unitId"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//REALMEASURETYPEType/alternativeUnitIds"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//REALTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REALTYPEType/valueFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//RECOMMENDEDPRESENTATIONType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//RECOMMENDEDPRESENTATIONType/propertyValueRecommendedPresentation"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//REFERENCEDDOCUMENTType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//REFERENCEDDOCUMENTType/documentReference"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//REFERENCEDGRAPHICSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//REFERENCEDGRAPHICSType/graphicsReference"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//REMOTELOCATIONSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//REMOTELOCATIONSType/remoteLocation"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//RemoteLocationType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//RemoteLocationType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//RemoteLocationType/language"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//REPRESENTATIONPDETType"/>
+    <genClasses ecoreClass="ontoml.ecore#//REPRESENTATIONREFERENCETYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REPRESENTATIONREFERENCETYPEType/classRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//REUSABLEKEYWORDType"/>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//REUSABLENAMEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REUSABLENAMEType/dateOfOriginalDefinition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REUSABLENAMEType/dateOfCurrentVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REUSABLENAMEType/dateOfCurrentRevision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REUSABLENAMEType/revision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REUSABLENAMEType/status"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//REUSABLENAMEType/sourceLanguage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REUSABLENAMEType/isDeprecated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//REUSABLENAMEType/isDeprecatedInterpretation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//REUSABLENAMEType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//REUSABLENAMEType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//REUSABLENAMEType/note"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REUSABLENAMEType/guid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REUSABLENAMEType/guid2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//REUSABLENAMEType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//REUSABLESYNONYMType"/>
+    <genClasses ecoreClass="ontoml.ecore#//SETTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SETTYPEType/bound1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SETTYPEType/bound2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//SETTYPEType/valueType"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//SETWITHSUBSETCONSTRAINTTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SETWITHSUBSETCONSTRAINTTYPEType/bound1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SETWITHSUBSETCONSTRAINTTYPEType/bound2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//SETWITHSUBSETCONSTRAINTTYPEType/valueType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SETWITHSUBSETCONSTRAINTTYPEType/cardinalMin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SETWITHSUBSETCONSTRAINTTYPEType/cardinalMax"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//SHORTNAMELABELType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SHORTNAMELABELType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SHORTNAMELABELType/countryCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SHORTNAMELABELType/languageCode"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//SHORTNAMEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//SHORTNAMEType/label"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//SIUNITType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SIUNITType/prefix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SIUNITType/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//SOURCEDOCUMENTType"/>
+    <genClasses ecoreClass="ontoml.ecore#//STRINGDICVALUEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//STRINGDICVALUEType/valueCode"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//STRINGPATTERNCONSTRAINTType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//STRINGPATTERNCONSTRAINTType/pattern"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//STRINGSIZECONSTRAINTType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//STRINGSIZECONSTRAINTType/minLength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//STRINGSIZECONSTRAINTType/maxLength"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//STRINGSType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//STRINGSType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//STRINGTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//STRINGTYPEType/valueFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//SUBCLASSCONSTRAINTType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//SUBCLASSCONSTRAINTType/subclasses"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//SUBSETType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUBSETType/valueGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/stringValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/bagValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/booleanValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/complexValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/compositeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/controlledValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/currencyValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/dateValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/dateTimeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/fileValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/integerValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/itemReferenceValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/localizedTextValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/measureQualifiedNumberValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/measureRangeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/measureSingleNumberValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/nullValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/rationalValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/realValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/sequenceValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/setValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/timeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/yearMonthValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ontoml.ecore#//SUBSETType/yearValue"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//SUPPLIERREFERENCEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERREFERENCEType/supplierRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//SUPPLIERSREFERENCEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//SUPPLIERSREFERENCEType/supplier"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//SUPPLIERType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/dateOfOriginalDefinition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/dateOfCurrentVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/dateOfCurrentRevision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/revision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/isDeprecated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//SUPPLIERType/isDeprecatedInterpretation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//SUPPLIERType/org"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/internalLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/streetNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/street"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/postalBox"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/town"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/region"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/postalCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/country"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/facsimileNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/telephoneNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/electronicMailAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/telexNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SUPPLIERType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//SUPPORTEDVEPType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//SUPPORTEDVEPType/viewExchangeProtocolIdentification"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//SYNONYMOUSNAMELABELType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SYNONYMOUSNAMELABELType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SYNONYMOUSNAMELABELType/countryCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SYNONYMOUSNAMELABELType/languageCode"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//SYNONYMOUSNAMEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//SYNONYMOUSNAMEType/label"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//SYNONYMOUSSYMBOLSType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//SYNONYMOUSSYMBOLSType/mathematicalString"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//SYNONYMREFERENCESType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//SYNONYMREFERENCESType/synonymRef"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//TEXTType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//TEXTType/text"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//TIMEDATATYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//TIMEDATATYPEType/valueFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//TRANSLATABLESTRINGTYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//TRANSLATABLESTRINGTYPEType/valueFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//TRANSLATIONDATAType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//TRANSLATIONDATAType/language"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//TRANSLATIONDATAType/responsibleTranslator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//TRANSLATIONDATAType/translationRevision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//TRANSLATIONDATAType/dateOfCurrentTranslationRevision"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//TRANSLATIONType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//TRANSLATIONType/translationData"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ontoml.ecore#//UNITType"/>
+    <genClasses ecoreClass="ontoml.ecore#//URITYPEType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//URITYPEType/valueFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//VCVRANGEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//VCVRANGEType/viewControlVariableRange"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//VIEWCONTROLVARIABLERANGEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ontoml.ecore#//VIEWCONTROLVARIABLERANGEType/parameterType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//VIEWCONTROLVARIABLERANGEType/rangeLobound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//VIEWCONTROLVARIABLERANGEType/rangeHibound"/>
+    </genClasses>
+    <genClasses ecoreClass="ontoml.ecore#//VIEWEXCHANGEPROTOCOLIDENTIFICATIONType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//VIEWEXCHANGEPROTOCOLIDENTIFICATIONType/sourceDocumentIdentifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//VIEWEXCHANGEPROTOCOLIDENTIFICATIONType/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//VIEWEXCHANGEPROTOCOLIDENTIFICATIONType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//VIEWEXCHANGEPROTOCOLIDENTIFICATIONType/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//VIEWEXCHANGEPROTOCOLIDENTIFICATIONType/application"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ontoml.ecore#//VIEWEXCHANGEPROTOCOLIDENTIFICATIONType/level"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Identifier" basePackage="iso.std.iso.ts._29002._5.ed._1.tech.xml.schema"
+      resource="XML" disposableProviderFactory="true" ecorePackage="identifier.ecore#/">
+    <genDataTypes ecoreDataType="identifier.ecore#//IRDIListType"/>
+    <genDataTypes ecoreDataType="identifier.ecore#//IRDIType"/>
+    <genClasses ecoreClass="identifier.ecore#//IRDISequenceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute identifier.ecore#//IRDISequenceType/iRDI"/>
+    </genClasses>
+    <genClasses ecoreClass="identifier.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute identifier.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference identifier.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference identifier.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute identifier.ecore#//DocumentRoot/iRDI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute identifier.ecore#//DocumentRoot/iRDIList"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Value" basePackage="iso.std.iso.ts._29002._10.ed._1.tech.xml.schema"
+      resource="XML" disposableProviderFactory="true" ecorePackage="value.ecore#/">
+    <genClasses ecoreClass="value.ecore#//BagValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute value.ecore#//BagValueType/valueGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/stringValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/bagValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/booleanValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/complexValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/compositeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/controlledValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/currencyValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/dateValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/dateTimeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/fileValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/integerValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/itemReferenceValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/localizedTextValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/measureQualifiedNumberValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/measureRangeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/measureSingleNumberValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/nullValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/rationalValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/realValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/sequenceValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/setValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/timeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/yearMonthValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//BagValueType/yearValue"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//BooleanValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//BooleanValueType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//CombinationType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute value.ecore#//CombinationType/valueGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/stringValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/bagValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/booleanValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/complexValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/compositeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/controlledValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/currencyValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/dateValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/dateTimeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/fileValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/integerValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/itemReferenceValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/localizedTextValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/measureQualifiedNumberValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/measureRangeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/measureSingleNumberValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/nullValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/rationalValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/realValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/sequenceValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/setValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/timeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/yearMonthValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//CombinationType/yearValue"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//ComplexValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//ComplexValueType/realPart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//ComplexValueType/imaginaryPart"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//CompositeValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//CompositeValueType/field"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//ConditionElementType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/stringValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/bagValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/booleanValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/complexValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/compositeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/controlledValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/currencyValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/dateValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/dateTimeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/fileValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/integerValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/itemReferenceValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/localizedTextValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/measureQualifiedNumberValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/measureRangeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/measureSingleNumberValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/nullValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/rationalValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/realValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/sequenceValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/setValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/timeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/yearMonthValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//ConditionElementType/yearValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//ConditionElementType/propertyRef"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//ControlledValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//ControlledValueType/valueCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//ControlledValueType/valueRef"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//CurrencyValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//CurrencyValueType/realValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//CurrencyValueType/complexValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//CurrencyValueType/integerValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//CurrencyValueType/rationalValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//CurrencyValueType/currencyCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//CurrencyValueType/currencyRef"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//DateTimeValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//DateTimeValueType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//DateValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//DateValueType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/bagValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/booleanValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/combination"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/complexValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/compositeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/controlledValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/currencyValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/dateTimeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/dateValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/environment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/fileValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/integerValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/itemReferenceValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/localizedTextValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/measureQualifiedNumberValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/measureRangeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/measureSingleNumberValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/nullValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/oneOf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/rationalValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/realValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/sequenceValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/setValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/stringValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/timeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/yearMonthValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//DocumentRoot/yearValue"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//EnvironmentType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//EnvironmentType/propertyValue"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//FieldType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/stringValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/bagValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/booleanValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/complexValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/compositeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/controlledValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/currencyValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/dateValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/dateTimeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/fileValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/integerValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/itemReferenceValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/localizedTextValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/measureQualifiedNumberValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/measureRangeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/measureSingleNumberValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/nullValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/rationalValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/realValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/sequenceValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/setValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/timeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/yearMonthValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//FieldType/yearValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//FieldType/propertyRef"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//FileValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//FileValueType/uRI"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//IntegerValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//IntegerValueType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//ItemReferenceValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//ItemReferenceValueType/itemLocalRef"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//LocalizedTextValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//LocalizedTextValueType/content"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//MeasureQualifiedNumberValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//MeasureQualifiedNumberValueType/qualifiedValue"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//MeasureRangeValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//MeasureRangeValueType/lowerValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//MeasureRangeValueType/upperValue"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//MeasureSingleNumberValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//MeasureSingleNumberValueType/presentationValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//MeasureSingleNumberValueType/realValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//MeasureSingleNumberValueType/complexValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//MeasureSingleNumberValueType/integerValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//MeasureSingleNumberValueType/rationalValue"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="value.ecore#//MeasureValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//MeasureValueType/presentationUOMCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//MeasureValueType/presentationUOMRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//MeasureValueType/uOMCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//MeasureValueType/uOMRef"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//NullValueType"/>
+    <genClasses ecoreClass="value.ecore#//NumericValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//NumericValueType/presentationValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//NumericValueType/realValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//NumericValueType/complexValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//NumericValueType/integerValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//NumericValueType/rationalValue"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//OneOfType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute value.ecore#//OneOfType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/combination"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/stringValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/bagValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/booleanValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/complexValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/compositeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/controlledValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/currencyValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/dateValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/dateTimeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/fileValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/integerValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/itemReferenceValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/localizedTextValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/measureQualifiedNumberValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/measureRangeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/measureSingleNumberValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/nullValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/rationalValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/realValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/sequenceValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/setValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/timeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/yearMonthValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//OneOfType/yearValue"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//PresentationValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//PresentationValueType/realValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//PresentationValueType/complexValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//PresentationValueType/integerValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//PresentationValueType/rationalValue"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//QualifiedValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//QualifiedValueType/presentationValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//QualifiedValueType/realValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//QualifiedValueType/complexValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//QualifiedValueType/integerValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference value.ecore#//QualifiedValueType/rationalValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//QualifiedValueType/qualifierCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//QualifiedValueType/qualifierRef"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//RationalValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//RationalValueType/wholePart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//RationalValueType/numerator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//RationalValueType/denominator"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//RealValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//RealValueType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//SequenceValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute value.ecore#//SequenceValueType/valueGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/stringValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/bagValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/booleanValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/complexValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/compositeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/controlledValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/currencyValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/dateValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/dateTimeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/fileValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/integerValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/itemReferenceValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/localizedTextValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/measureQualifiedNumberValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/measureRangeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/measureSingleNumberValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/nullValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/rationalValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/realValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/sequenceValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/setValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/timeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/yearMonthValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SequenceValueType/yearValue"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//SetValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute value.ecore#//SetValueType/valueGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/stringValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/bagValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/booleanValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/complexValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/compositeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/controlledValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/currencyValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/dateValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/dateTimeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/fileValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/integerValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/itemReferenceValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/localizedTextValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/measureQualifiedNumberValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/measureRangeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/measureSingleNumberValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/nullValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/rationalValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/realValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/sequenceValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/setValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/timeValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/yearMonthValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference value.ecore#//SetValueType/yearValue"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//StringValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//StringValueType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//TimeValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//TimeValueType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//YearMonthValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//YearMonthValueType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="value.ecore#//YearValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute value.ecore#//YearValueType/value"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Basic" basePackage="iso.std.iso.ts._29002._4.ed._1.tech.xml.schema"
+      resource="XML" disposableProviderFactory="true" ecorePackage="basic.ecore#/">
+    <genDataTypes ecoreDataType="basic.ecore#//ASN1IdentifierType"/>
+    <genDataTypes ecoreDataType="basic.ecore#//DayIntervalType"/>
+    <genDataTypes ecoreDataType="basic.ecore#//ISOCountryCodeType"/>
+    <genDataTypes ecoreDataType="basic.ecore#//ISOCurrencyCodeType"/>
+    <genDataTypes ecoreDataType="basic.ecore#//ISOLanguageCodeType"/>
+    <genClasses ecoreClass="basic.ecore#//InternationalTextType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basic.ecore#//InternationalTextType/localString"/>
+    </genClasses>
+    <genClasses ecoreClass="basic.ecore#//LanguageStringType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basic.ecore#//LanguageStringType/content"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basic.ecore#//LanguageStringType/languageRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basic.ecore#//LanguageStringType/languageCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basic.ecore#//LanguageStringType/countryCode"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Catalogue" basePackage="iso.std.iso.ts._29002._10.ed._1.tech.xml.schema"
+      resource="XML" disposableProviderFactory="true" ecorePackage="catalogue.ecore#/">
+    <genClasses ecoreClass="catalogue.ecore#//CatalogueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//CatalogueType/item"/>
+    </genClasses>
+    <genClasses ecoreClass="catalogue.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference catalogue.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference catalogue.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//DocumentRoot/catalogue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//DocumentRoot/item"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//DocumentRoot/propertyValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//DocumentRoot/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="catalogue.ecore#//ItemType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//ItemType/classificationRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//ItemType/reference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//ItemType/propertyValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//ItemType/classRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//ItemType/createdView"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//ItemType/dataSpecificationRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//ItemType/informationSupplierReferenceString"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//ItemType/isDependent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//ItemType/isGlobalId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//ItemType/isModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//ItemType/isProprietary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//ItemType/localId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//ItemType/viewOf"/>
+    </genClasses>
+    <genClasses ecoreClass="catalogue.ecore#//PropertyValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/stringValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/bagValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/booleanValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/complexValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/compositeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/controlledValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/currencyValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/dateValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/dateTimeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/fileValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/integerValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/itemReferenceValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/localizedTextValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/measureQualifiedNumberValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/measureRangeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/measureSingleNumberValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/nullValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/rationalValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/realValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/sequenceValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/setValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/timeValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/yearMonthValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/yearValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/oneOf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/combination"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//PropertyValueType/environment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//PropertyValueType/isProprietary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//PropertyValueType/propertyRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//PropertyValueType/subitemPathPropertyRef"/>
+    </genClasses>
+    <genClasses ecoreClass="catalogue.ecore#//ReferenceType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference catalogue.ecore#//ReferenceType/designation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//ReferenceType/organizationCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//ReferenceType/organizationRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute catalogue.ecore#//ReferenceType/referenceNumber"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

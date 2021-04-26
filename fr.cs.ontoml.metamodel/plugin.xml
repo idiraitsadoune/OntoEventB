@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ontoml -->
+      <package
+            uri="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml"
+            class="iso.std.iso.is._13584._32.ed._1.tech.xml.schema.ontoml.OntomlPackage"
+            genModel="model/ontoml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated ontoml -->
+      <parser
+            type="ontoml"
+            class="iso.std.iso.is._13584._32.ed._1.tech.xml.schema.ontoml.util.OntomlResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ontoml -->
+      <package
+            uri="urn:iso:std:iso:ts:29002:-5:ed-1:tech:xml-schema:identifier"
+            class="iso.std.iso.ts._29002._5.ed._1.tech.xml.schema.identifier.IdentifierPackage"
+            genModel="model/ontoml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated ontoml -->
+      <parser
+            type="identifier"
+            class="iso.std.iso.ts._29002._5.ed._1.tech.xml.schema.identifier.util.IdentifierResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ontoml -->
+      <package
+            uri="urn:iso:std:iso:ts:29002:-10:ed-1:tech:xml-schema:value"
+            class="iso.std.iso.ts._29002._10.ed._1.tech.xml.schema.value.ValuePackage"
+            genModel="model/ontoml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated ontoml -->
+      <parser
+            type="value"
+            class="iso.std.iso.ts._29002._10.ed._1.tech.xml.schema.value.util.ValueResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ontoml -->
+      <package
+            uri="urn:iso:std:iso:ts:29002:-4:ed-1:tech:xml-schema:basic"
+            class="iso.std.iso.ts._29002._4.ed._1.tech.xml.schema.basic.BasicPackage"
+            genModel="model/ontoml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated ontoml -->
+      <parser
+            type="basic"
+            class="iso.std.iso.ts._29002._4.ed._1.tech.xml.schema.basic.util.BasicResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ontoml -->
+      <package
+            uri="urn:iso:std:iso:ts:29002:-10:ed-1:tech:xml-schema:catalogue"
+            class="iso.std.iso.ts._29002._10.ed._1.tech.xml.schema.catalogue.CataloguePackage"
+            genModel="model/ontoml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated ontoml -->
+      <parser
+            type="catalogue"
+            class="iso.std.iso.ts._29002._10.ed._1.tech.xml.schema.catalogue.util.CatalogueResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

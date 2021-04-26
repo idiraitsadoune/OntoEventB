@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OntoEventB Pivot Model
+Bundle-SymbolicName: fr.cs.ontoeventb.pivotmodel.metamodel;singleton:=true
+Automatic-Module-Name: fr.cs.ontoeventb.pivotmodel.metamodel
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: CentraleSupelec
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: pivotmodel,
+ pivotmodel.impl,
+ pivotmodel.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy

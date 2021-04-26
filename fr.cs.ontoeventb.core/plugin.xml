@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="fr.cs.impex.pivotmodel.pm2b.objectContribution1"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="fr.cs.impex.pivotmodel.pm2b.menu1"
+               label="OntoEventB"
+               path="additions">
+            <separator
+                  name="fr.cs.rimpex.pivotmodel.pm2b.separator1">
+            </separator>
+         </menu>
+         <action
+               class="fr.cs.impex.pivotmodel.pm2b.PmToEventBAction"
+               enablesFor="1"
+               id="fr.cs.impex.pivotmodel.pm2b.pmtoeventbaction"
+               label="PivotModel --&gt; Event-B"
+               menubarPath="fr.cs.impex.pivotmodel.pm2b.menu1/group1">
+         </action>
+         <action
+               class="fr.cs.impex.pivotmodel.owl2pm.OwlToPmAction"
+               enablesFor="1"
+               id="fr.cs.impex.pivotmodel.pm2b.owltopmaction"
+               label="OWL --&gt; PivotModel "
+               menubarPath="fr.cs.impex.pivotmodel.pm2b.menu1/group1">
+         </action>
+         <action
+               class="fr.cs.impex.pivotmodel.owl2b.OwlToEventBAction"
+               enablesFor="1"
+               id="fr.cs.impex.pivotmodel.pm2b.owltoeventbaction"
+               label="OWL --&gt; Event-B"
+               menubarPath="fr.cs.impex.pivotmodel.pm2b.menu1/group1">
+         </action>
+         <action
+               class="fr.cs.impex.pivotmodel.ontoml2pm.OntoMLToPmAction"
+               enablesFor="1"
+               id="fr.cs.impex.pivotmodel.pm2b.ontomltopmaction"
+               label="OntoML --&gt; PivotModel "
+               menubarPath="fr.cs.impex.pivotmodel.pm2b.menu1/group1">
+         </action>
+         <action
+               class="fr.cs.impex.pivotmodel.ontoml2b.OntoMLT0EventBAction"
+               enablesFor="1"
+               id="fr.cs.impex.pivotmodel.pm2b.ontomltoebaction"
+               label="OntoML --&gt; Event-B"
+               menubarPath="fr.cs.impex.pivotmodel.pm2b.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

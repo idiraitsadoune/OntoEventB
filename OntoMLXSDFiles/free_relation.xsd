@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+PARADINE EPTOS XML - 1.0
+File Version: 1.0.1
+-->
+<!--
+
+© ISO 2010 — All rights reserved
+
+Permission is hereby granted, free of charge in perpetuity, to any person obtaining a copy of the Schema, to use, copy, modify, merge and distribute free of charge, copies of the Schema for the purposes of developing, implementing, installing and using software based on the Schema, and to permit persons to whom the Schema is furnished to do so, subject to the following conditions:
+
+THE SCHEMA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE 
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SCHEMA OR THE USE OR OTHER DEALINGS IN THE SCHEMA.
+
+In addition, any modified copy of the Schema shall include the following notice:
+
+THIS SCHEMA HAS BEEN MODIFIED FROM THE SCHEMA DEFINED IN ISO 13584-32, AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD
+
+
+
+© Paradine 2011, 2012 - All rights reserved
+
+Paradine tailored schema(s) of various sources in a compatible way in order to fulfill customer requirements and support seamless usage.
+The modified schema is published as EPTOS XML.   
+
+THIS SCHEMA (EPTOS XML) HAS BEEN MODIFIED FROM THE SCHEMA DEFINED IN ISO 13584-32, AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD
+
+Permission is hereby granted, free of charge in perpetuity, to any person obtaining a copy of the Schema, to use, copy, modify, merge and distribute free of charge, copies of the Schema for the purposes of developing, implementing, installing and using software based on the Schema, and to permit persons to whom the Schema is furnished to do so, subject to the following conditions:
+
+The copyright statement of this work, its permission notice and disclaimer shall be included in all copies of this DTD/XML Schema ("the Schema"), 
+and derivations of the Schema:
+
+THE SCHEMA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE 
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SCHEMA OR THE USE OR OTHER DEALINGS IN THE SCHEMA.
+
+In addition, any modified copy of the EPTOS XML Schema shall include the following notice:
+
+THIS SCHEMA HAS BEEN MODIFIED FROM THE PARADINE EPTOS XML SCHEMA, AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT SCHEMA
+
+-->
+<xs:schema xmlns="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="identifier.xsd"/>
+	<xs:include schemaLocation="basic.xsd"/>
+	<xs:complexType name="FREE_RELATIONS_Type">
+		<xs:sequence>
+			<xs:element name="relation" type="FREE_RELATION_Type" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FREE_RELATION_Type">
+		<xs:sequence>
+			<xs:element name="definition" type="FREE_RELATION_DEFINITION_REF_Type"/>
+			<xs:element name="end" type="FREE_RELATION_END_REF_Type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FREE_RELATION_END_REF_Type">
+		<xs:attribute name="element_ref" type="FreeRelationEndId" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="FREE_RELATION_DEFINITION_REF_Type">
+		<xs:attribute name="defintion_ref" type="FreeRelationDefinitionId" use="required"/>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pivotmodel" nsURI="http://PM/" nsPrefix="pm">
+  <eClassifiers xsi:type="ecore:EClass" name="Ontology">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containedClasses" upperBound="-1"
+        eType="#//ClassDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containedProperties" upperBound="-1"
+        eType="#//PropertyDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containedDataTypes" upperBound="-1"
+        eType="#//DataTypeDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassDefinition" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subClassOf" upperBound="-1"
+        eType="#//ClassDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="disjointWith" upperBound="-1"
+        eType="#//ClassDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalentTo" upperBound="-1"
+        eType="#//ClassDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="describedBy" upperBound="-1"
+        eType="#//PropertyDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleClass" eSuperTypes="#//ClassDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyDefinition" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFunctional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSymmetric" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTransitive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInverseFunctional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="range" eType="#//DataTypeDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subPropertyOf" upperBound="-1"
+        eType="#//PropertyDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalentTo" upperBound="-1"
+        eType="#//PropertyDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inverseOf" upperBound="-1"
+        eType="#//PropertyDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" eType="#//ClassDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleProperty" eSuperTypes="#//PropertyDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataTypeDefinition" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType" abstract="true" eSuperTypes="#//DataTypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="basedOn" lowerBound="1"
+        eType="#//PredefinedType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CaseOfClass" eSuperTypes="#//ClassDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="caseOf" lowerBound="1"
+        upperBound="-1" eType="#//ClassDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importedProperties" upperBound="-1"
+        eType="#//PropertyDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RestrictedClass" abstract="true" eSuperTypes="#//ClassDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onProperty" lowerBound="1"
+        eType="#//PropertyDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueRestrictedClass" abstract="true"
+      eSuperTypes="#//RestrictedClass">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toDataDefinition" lowerBound="1"
+        eType="#//DataTypeDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UniversalClass" eSuperTypes="#//ValueRestrictedClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExistantialClass" eSuperTypes="#//ValueRestrictedClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HasValueClass" eSuperTypes="#//ValueRestrictedClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CardinalityRestrictedClass" abstract="true"
+      eSuperTypes="#//RestrictedClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MaxCardinalityClass" eSuperTypes="#//CardinalityRestrictedClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxCard" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MinCardinalityClass" eSuperTypes="#//CardinalityRestrictedClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minCard" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CardinalityClass" eSuperTypes="#//CardinalityRestrictedClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="card" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumeratedClass" eSuperTypes="#//ClassDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oneOf" lowerBound="1" upperBound="-1"
+        eType="#//SingleValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CombinationClass" abstract="true" eSuperTypes="#//ClassDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="combinationOf" lowerBound="1"
+        upperBound="-1" eType="#//ClassDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnionClass" eSuperTypes="#//CombinationClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntersectionClass" eSuperTypes="#//CombinationClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplementClass" eSuperTypes="#//CombinationClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionProperty" eSuperTypes="#//PropertyDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DependentProperty" eSuperTypes="#//PropertyDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependsOn" lowerBound="1"
+        upperBound="-1" eType="#//PropertyDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NotNumericType" eSuperTypes="#//PrimitiveType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NumericType" eSuperTypes="#//PrimitiveType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MeasureType" eSuperTypes="#//NumericType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unit" lowerBound="1" eType="#//UnitType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CurrencyType" eSuperTypes="#//NumericType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="currency" lowerBound="1"
+        eType="#//PredefinedCurrency"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PredefinedType">
+    <eLiterals name="INTEGER"/>
+    <eLiterals name="NATURAL" value="1"/>
+    <eLiterals name="BOOLEAN" value="2"/>
+    <eLiterals name="STRING" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassType" eSuperTypes="#//DataTypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="basedOn" lowerBound="1"
+        eType="#//ClassDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CollectionType" eSuperTypes="#//DataTypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="collectionOf" lowerBound="1"
+        eType="#//DataTypeDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="is" lowerBound="1" eType="#//PredefinedCollection"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PredefinedCollection">
+    <eLiterals name="ARRAY"/>
+    <eLiterals name="SET" value="1"/>
+    <eLiterals name="BAG" value="2"/>
+    <eLiterals name="LIST" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleValue" eSuperTypes="#//DataTypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isOfType" lowerBound="1"
+        eType="#//DataTypeDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumeratedType" eSuperTypes="#//DataTypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" lowerBound="1"
+        upperBound="-1" eType="#//SingleValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PredefinedCurrency">
+    <eLiterals name="EUR"/>
+    <eLiterals name="USD" value="1"/>
+    <eLiterals name="SUR" value="2"/>
+    <eLiterals name="JPY" value="3"/>
+    <eLiterals name="CNY" value="4"/>
+    <eLiterals name="CHF" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberEnumeratedType" eSuperTypes="#//DataTypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contains" lowerBound="1"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnitType" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedUnit" eSuperTypes="#//UnitType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exponent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DerivedUnit" eSuperTypes="#//UnitType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="derivedUnitElement" lowerBound="1"
+        upperBound="-1" eType="#//DerivedUnitElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NonStandardUnit" eSuperTypes="#//NamedUnit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConversionBasedUnit" eSuperTypes="#//NamedUnit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueComponent" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unitComponent" lowerBound="1"
+        eType="#//UnitType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextDependentUnit" eSuperTypes="#//NamedUnit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StandardUnit" eSuperTypes="#//NamedUnit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="#//PrefixeType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//UnitName"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DerivedUnitElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exponent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unit" lowerBound="1" eType="#//NamedUnit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PrefixeType">
+    <eLiterals name="EXA"/>
+    <eLiterals name="PETA" value="1"/>
+    <eLiterals name="TERA" value="2"/>
+    <eLiterals name="GIGA" value="3"/>
+    <eLiterals name="MEGA" value="4"/>
+    <eLiterals name="KILO" value="5"/>
+    <eLiterals name="HECTO" value="6"/>
+    <eLiterals name="DECA" value="7"/>
+    <eLiterals name="DECI" value="8"/>
+    <eLiterals name="CENTI" value="9"/>
+    <eLiterals name="MILLI" value="10"/>
+    <eLiterals name="MICRO" value="11"/>
+    <eLiterals name="NANO" value="12"/>
+    <eLiterals name="PICO" value="13"/>
+    <eLiterals name="FEMTO" value="14"/>
+    <eLiterals name="ATTO" value="15"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnitName">
+    <eLiterals name="METRE"/>
+    <eLiterals name="GRAM" value="1"/>
+    <eLiterals name="SECOND" value="2"/>
+    <eLiterals name="AMPERE" value="3"/>
+    <eLiterals name="KELVIN" value="4"/>
+    <eLiterals name="MOLE" value="5"/>
+    <eLiterals name="CANDELA" value="6"/>
+    <eLiterals name="RADIAN" value="7"/>
+    <eLiterals name="STERADIAN" value="8"/>
+    <eLiterals name="HERTZ" value="9"/>
+    <eLiterals name="NEWTON" value="10"/>
+    <eLiterals name="PASCAL" value="11"/>
+    <eLiterals name="JOULE" value="12"/>
+    <eLiterals name="WATT" value="13"/>
+    <eLiterals name="COULOMB" value="14"/>
+    <eLiterals name="VOLT" value="15"/>
+    <eLiterals name="FARAD" value="16"/>
+    <eLiterals name="OHM" value="17"/>
+    <eLiterals name="SIEMENS" value="18"/>
+    <eLiterals name="WEBER" value="19"/>
+    <eLiterals name="TESLA" value="20"/>
+    <eLiterals name="HENRY" value="21"/>
+    <eLiterals name="DEGREE_CELSIUS" value="22"/>
+    <eLiterals name="LUMEN" value="23"/>
+    <eLiterals name="LUX" value="24"/>
+    <eLiterals name="BECQUEREL" value="25"/>
+    <eLiterals name="GRAY" value="26"/>
+    <eLiterals name="SIEVERT" value="27"/>
+  </eClassifiers>
+</ecore:EPackage>

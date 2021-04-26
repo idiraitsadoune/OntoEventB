@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+PARADINE EPTOS XML - 1.0
+File Version: 1.0.4
+--><!--
+
+© ISO 2010 — All rights reserved
+
+Permission is hereby granted, free of charge in perpetuity, to any person obtaining a copy of the Schema, to use, copy, modify, merge and distribute free of charge, copies of the Schema for the purposes of developing, implementing, installing and using software based on the Schema, and to permit persons to whom the Schema is furnished to do so, subject to the following conditions:
+
+THE SCHEMA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SCHEMA OR THE USE OR OTHER DEALINGS IN THE SCHEMA.
+
+In addition, any modified copy of the Schema shall include the following notice:
+
+THIS SCHEMA HAS BEEN MODIFIED FROM THE SCHEMA DEFINED IN ISO 13584-32, AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD
+
+
+
+© Paradine 2011, 2012 - All rights reserved
+
+Paradine tailored schema(s) of various sources in a compatible way in order to fulfill customer requirements and support seamless usage.
+The modified schema is published as EPTOS XML.   
+
+THIS SCHEMA (EPTOS XML) HAS BEEN MODIFIED FROM THE SCHEMA DEFINED IN ISO 13584-32, AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD
+
+Permission is hereby granted, free of charge in perpetuity, to any person obtaining a copy of the Schema, to use, copy, modify, merge and distribute free of charge, copies of the Schema for the purposes of developing, implementing, installing and using software based on the Schema, and to permit persons to whom the Schema is furnished to do so, subject to the following conditions:
+
+The copyright statement of this work, its permission notice and disclaimer shall be included in all copies of this DTD/XML Schema ("the Schema"), and derivations of the Schema:
+
+THE SCHEMA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SCHEMA OR THE USE OR OTHER DEALINGS IN THE SCHEMA.
+
+In addition, any modified copy of the EPTOS XML Schema shall include the following notice:
+
+THIS SCHEMA HAS BEEN MODIFIED FROM THE PARADINE EPTOS XML SCHEMA, AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT SCHEMA
+
+--><xs:schema xmlns="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml">
+	<xs:include schemaLocation="identifier.xsd"/>
+	<xs:include schemaLocation="basic.xsd"/>
+	<xs:include schemaLocation="translation.xsd"/>
+	<xs:include schemaLocation="external_file.xsd"/>
+	<xs:include schemaLocation="type_system.xsd"/>
+	<xs:include schemaLocation="reusable_name.xsd"/>
+	<xs:include schemaLocation="free_relation.xsd"/>
+	<!-- Global element -->
+	<xs:element name="property" type="PROPERTY_Type"/>
+	<!-- Simple type definitions -->
+	<xs:simpleType name="DET_CLASSIFICATION_TYPE_Type">
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Complex type definitions -->
+	<xs:complexType name="CONDITION_DET_Type">
+		<xs:complexContent>
+			<xs:extension base="PROPERTY_Type"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DEPENDENT_P_DET_Type">
+		<xs:complexContent>
+			<xs:extension base="PROPERTY_Type">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="depends_on" type="PROPERTIES_REFERENCE_Type"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NON_DEPENDENT_P_DET_Type">
+		<xs:complexContent>
+			<xs:extension base="PROPERTY_Type"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType abstract="true" name="PROPERTY_Type">
+		<xs:sequence>
+			<xs:element name="name_scope" type="CLASS_REFERENCE_Type"/>
+			<xs:element minOccurs="0" name="date_of_original_definition" type="DATE_TYPE_Type"/>
+			<xs:element minOccurs="0" name="date_of_current_version" type="DATE_TYPE_Type"/>
+			<xs:element minOccurs="0" name="date_of_current_revision" type="DATE_TYPE_Type"/>
+			<xs:element name="revision" type="REVISION_TYPE_Type"/>
+			<xs:element minOccurs="0" name="status" type="STATUS_Type"/>
+			<xs:element minOccurs="0" name="translation" type="TRANSLATION_Type"/>
+			<xs:element minOccurs="0" name="source_language" type="LANGUAGE_Type"/>
+			<xs:element minOccurs="0" name="is_deprecated" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="is_deprecated_interpretation" type="TEXT_Type"/>
+			<xs:element name="preferred_name" type="PREFERRED_NAME_Type"/>
+			<xs:element minOccurs="0" name="synonymous_names" type="SYNONYMOUS_NAME_Type"/>
+			<xs:element minOccurs="0" name="short_name" type="SHORT_NAME_Type"/>
+			<xs:element minOccurs="0" name="icon" type="GRAPHICS_Type"/>
+			<xs:element name="definition" type="TEXT_Type"/>
+			<xs:element minOccurs="0" name="source_doc_of_definition" type="SOURCE_DOCUMENT_Type"/>
+			<xs:element minOccurs="0" name="note" type="TEXT_Type"/>
+			<xs:element minOccurs="0" name="remark" type="TEXT_Type"/>
+			<xs:element minOccurs="0" name="preferred_symbol" type="MATHEMATICAL_STRING_Type"/>
+			<xs:element minOccurs="0" name="synonymous_symbols" type="SYNONYMOUS_SYMBOLS_Type"/>
+			<xs:element minOccurs="0" name="figure" type="GRAPHICS_Type"/>
+			<xs:element minOccurs="0" name="det_classification" type="DET_CLASSIFICATION_TYPE_Type"/>
+			<xs:element name="domain" type="ANY_TYPE_Type"/>
+			<xs:element minOccurs="0" name="formula" type="MATHEMATICAL_STRING_Type"/>
+			<xs:element minOccurs="0" name="synonym_references" type="SYNONYM_REFERENCES_Type"/>
+			<xs:element minOccurs="0" name="suggested_value_list" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="free_relations" type="FREE_RELATIONS_Type"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="PropertyId" use="required"/>
+		<xs:attribute name="guid" type="EptosGUID"/>
+		<xs:attribute name="guid2" type="EptosGUID"/>
+	</xs:complexType>
+	<xs:complexType name="REPRESENTATION_P_DET_Type">
+		<xs:complexContent>
+			<xs:extension base="PROPERTY_Type"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SYNONYMOUS_SYMBOLS_Type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" name="mathematical_string" type="MATHEMATICAL_STRING_Type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SYNONYM_REFERENCES_Type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" name="synonym_ref" type="SYNONYM_REFERENCE_Type"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

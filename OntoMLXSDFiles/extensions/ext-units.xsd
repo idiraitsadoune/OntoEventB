@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+PARADINE EPTOS4� DICTIONARY - XML Schema
+-->
+<!--
+
+The following permission notice and disclaimer shall be included in all copies of this DTD/XML Schema ("the Schema"), 
+and derivations of the Schema:
+
+� Paradine 2011 - All rights reserved
+
+Permission is hereby granted, free of charge in perpetuity, to any person obtaining a copy of the Schema, to use, 
+copy, modify, merge and distribute free of charge, copies of the Schema for the purposes of developing, implementing, 
+installing and using software based on the Schema, and to permit persons to whom the Schema is furnished to do so, 
+subject to the following conditions:
+
+THE SCHEMA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE 
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS 
+OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SCHEMA OR THE USE OR OTHER DEALINGS IN THE SCHEMA.
+
+In addition, any modified copy of the Schema shall include the following notice:
+
+THIS SCHEMA HAS BEEN MODIFIED FROM THE PARADINE EPTOS4� DICTIONARY SCHEMA, AND SHOULD NOT BE INTERPRETED AS COMPLYING 
+WITH THAT SCHEMA
+
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:x-ontoml-extensions:schema:core" xmlns:ontoml="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" targetNamespace="urn:x-ontoml-extensions:schema:core" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" schemaLocation="../identifier.xsd"/>
+	<xs:import namespace="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" schemaLocation="../basic.xsd"/>
+	<xs:import namespace="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" schemaLocation="../translation.xsd"/>
+	<xs:import namespace="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" schemaLocation="../external_file.xsd"/>
+	<xs:import namespace="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" schemaLocation="../property.xsd"/>
+	<xs:element name="complete_unit" type="COMPLETE_UNIT_Type"/>
+	<xs:element name="aspect_of_conversion" type="ASPECT_OF_CONVERSION_Type"/>
+	<xs:element name="quantity" type="QUANTITY_Type"/>
+	<xs:simpleType name="AspectOfConversionId">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([0-9]{4})\-([A-Z0-9:_\.]{1,35})(\-([A-Z0-9:_\.]{1,35})((\-[019])(\-([A-Z0-9]{1,10})_([A-Z0-9]{0,10})_([0-9]{1,5}))?)?)?#Z2\-([A-Z0-9:_\.]{1,71})#[0-9]{1,9}"/>
+			<xs:pattern value="([0-9]{4})\-([A-Z0-9:_\.]{1,35})\-([A-Z0-9:_\.]{1,35})\-\-([A-Z0-9]{1,10})_([A-Z0-9]{0,10})_([0-9]{1,5})#Z2\-([A-Z0-9:_\.]{1,71})#[0-9]{1,9}"/>
+			<xs:pattern value="([0-9]{4})\-([A-Z0-9:_\.]{1,35})\-\-\-([A-Z0-9]{1,10})_([A-Z0-9]{0,10})_([0-9]{1,5})#Z2\-([A-Z0-9_:\.]{1,71})#[0-9]{1,9}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ASPECT_OF_CONVERSION_REFERENCE_Type" abstract="false" mixed="false">
+		<xs:attribute name="aoc_ref" type="AspectOfConversionId" use="required"/>
+	</xs:complexType>
+	<xs:simpleType name="DIN_NOTATION_Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="70"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SI_NOTATION_Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ECE_CODE_Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ECE_NAME_Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SI_NAME_Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AOC_NAME_Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NIST_NAME_Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VALIDITY_TO_ICS_Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LOCAL_NAME_TYPE_Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="LOCAL_NAME_LABEL_Type">
+		<xs:simpleContent>
+			<xs:extension base="LOCAL_NAME_TYPE_Type">
+				<xs:attribute name="language_code" type="ontoml:LANGUAGE_CODE_Type" use="optional"/>
+				<xs:attribute name="country_code" type="ontoml:COUNTRY_CODE_Type" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="LOCAL_NAME_Type">
+		<xs:sequence>
+			<xs:element name="label" type="LOCAL_NAME_LABEL_Type" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="COMPLETE_UNIT_Type">
+		<xs:sequence>
+			<xs:element name="date_of_original_definition" type="ontoml:DATE_TYPE_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation> the date associated to the first stable version of the unit definition</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="date_of_current_version" type="ontoml:DATE_TYPE_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation> the date associated to the present version of the unit definition</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="date_of_current_revision" type="ontoml:DATE_TYPE_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the date associated to the present revision of the unit definition</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="revision" type="ontoml:REVISION_TYPE_Type">
+				<xs:annotation>
+					<xs:documentation>the revision number of the present unit definition</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="status" type="ontoml:STATUS_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>defines the life cycle state of the unit definition</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="translation" type="ontoml:TRANSLATION_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the possible set of translations information provided for the translatable items</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="source_language" type="ontoml:LANGUAGE_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the language in which the unit definition was initially defined and that provides 
+the reference meaning in case of translation discrepancy</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="is_deprecated" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a Boolean that specifies, when true, that the unit definition shall no longer be used</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="is_deprecated_interpretation" type="ontoml:TEXT_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>specifies the deprecation rationale and how instance values of the 
+unit, and of its corresponding identifier, should be interpreted</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="preferred_name" type="ontoml:PREFERRED_NAME_Type">
+				<xs:annotation>
+					<xs:documentation>the structured name of the unit, possibly translated</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="synonymous_names" type="ontoml:SYNONYMOUS_NAME_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the set of synonymous names of the preferred name, possibly translated</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="short_name" type="ontoml:SHORT_NAME_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the abbreviation of the preferred name, possibly translated</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_name" type="LOCAL_NAME_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the local name of the unit, possibly translated</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="icon" type="ontoml:GRAPHICS_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>a graphics representing the description associated with the names</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="definition" type="ontoml:TEXT_Type">
+				<xs:annotation>
+					<xs:documentation>the text describing this unit, possibly translated</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="source_doc_of_definition" type="ontoml:SOURCE_DOCUMENT_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the possible source document from which the definition comes</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="comment" type="ontoml:TEXT_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>explanatory text further clarifying the meaning of this unit, possibly translated</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SI_notation" type="SI_NOTATION_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ISO 1000 notation for the unit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SI_name" type="SI_NAME_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ISO 1000 name for the unit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DIN_notation" type="DIN_NOTATION_Type">
+				<xs:annotation>
+					<xs:documentation>ISO 61360 notation for the unit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ECE_name" type="ECE_NAME_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>UN ECE name of the unit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ECE_code" type="ECE_CODE_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>UN ECE code of the unit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NIST_name" type="NIST_NAME_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>NIST name for the unit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="aspect_of_conversion" type="ASPECT_OF_CONVERSION_REFERENCE_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the aspect of conversion for the unit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="validity_to_ICS" type="VALIDITY_TO_ICS_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the ICS validity for the unit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="ontoml:DicUnitId" use="required">
+			<xs:annotation>
+				<xs:documentation>identification of the unit</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="QUANTITY_Type">
+		<xs:annotation>
+			<xs:documentation>used to describe a quantity. The quantity is referenced by the property using an extended attribute</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ontoml:PROPERTY_Type">
+				<xs:sequence>
+					<xs:element name="its_superquantity" type="ontoml:PROPERTY_REFERENCE_Type" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>reference to the quantity the current one is a subclass of</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="aspect_of_conversion" type="ASPECT_OF_CONVERSION_REFERENCE_Type" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>reference the aspect of conversion of this quantity</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="assigned_unit_ids" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>the list of units that restricts the possible units of the properties having current quantity set</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="dic_unit" type="ontoml:DIC_UNIT_REFERENCE_Type" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ASPECT_OF_CONVERSION_Type">
+		<xs:annotation>
+			<xs:documentation>all exponents needs to be specified even if 0</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="date_of_original_definition" type="ontoml:DATE_TYPE_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the date associated to the first stable version of the aspect of conversion</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="date_of_current_version" type="ontoml:DATE_TYPE_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the date associated to the present version of the aspect of conversion</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="date_of_current_revision" type="ontoml:DATE_TYPE_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the date associated to the present revision of the aspect of conversion</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="revision" type="ontoml:REVISION_TYPE_Type">
+				<xs:annotation>
+					<xs:documentation>the revision number of the present aspect of conversion</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="AOC_NAME_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the name of the aspect of conversion</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="status" type="ontoml:STATUS_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>defines the life cycle state of the aspect of conversion</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_1" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the '1' base exponent</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_m" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'm' base exponent (length)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_kg" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'kg' base exponent (mass)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_s" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 's' base exponent (time)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_A" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'A' base exponent (electric current)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_K" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'K' base exponent (thermodinamic tempertature)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_mol" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'mol' base exponent (amount of substance)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_cd" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'cd' base exponent (luminous intensity)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_rad" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'rad' base exponent (angle)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_sr" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'sr' base exponent (solid angle)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_B" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'B' base exponent (Bell)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_Np" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'Np' base exponent (Neper)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_Bd" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'Bd' base exponent (baud)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_bit" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'bit' base exponent (data rate)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_byte" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'byte' base exponent (amount of information)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_dec" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'dec' base exponent</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_octave" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'octave' base exponent(ration of frequency between notes)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_phon" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'phone' base exponent (loudness level)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_sone" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'sone' base exponent (perceived loudness)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_hart" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'hart' base exponent (Hartley)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_Sh" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'Sh' base exponent (Shannon)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_nat" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'nat' base exponent (base e log) natural unit for information entropy</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exponent_E" type="xs:decimal">
+				<xs:annotation>
+					<xs:documentation>the power of the 'E' base exponent (Erlang)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="AspectOfConversionId" use="required">
+			<xs:annotation>
+				<xs:documentation>identification of the aspect of conversion</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

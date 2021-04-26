@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>fr.cs.ontoeventb</groupId>
+	<artifactId>fr.cs.ontoeventb</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+
+		<tycho-version>2.0.0</tycho-version>
+
+		<xtext.version>2.25.0</xtext.version>
+		<tycho.disableP2Mirrors>true</tycho.disableP2Mirrors>
+	</properties>
+
+	<modules>
+		<module>fr.cs.ontoeventb.pivotmodel.metamodel</module>
+		<module>fr.cs.ontoeventb.pivotmodel.dsl</module>
+		<module>fr.cs.ontoeventb.pivotmodel.dsl.ui</module>
+		<module>fr.cs.ontoeventb.pivotmodel.dsl.ide</module>
+		<module>fr.cs.ontoml.metamodel</module>
+		<module>fr.cs.ontoeventb.core</module>
+		<module>fr.cs.ontoeventb.feature</module>
+		<module>fr.cs.ontoeventb.updatesite</module>
+	</modules>
+
+	<repositories>
+		<repository>
+			<id>eclipse</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/releases/2021-03/</url>
+		</repository>
+		<repository>
+			<id>Xtext Update Site</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/modeling/tmf/xtext/updates/releases/${xtext.version}/</url>
+		</repository>
+		<repository>
+			<id>rodin</id>
+			<layout>p2</layout>
+			<url>http://rodin-b-sharp.sourceforge.net/core-updates/</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-surefire-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+	
+		</plugins>
+	</build>
+	
+
+</project>
+

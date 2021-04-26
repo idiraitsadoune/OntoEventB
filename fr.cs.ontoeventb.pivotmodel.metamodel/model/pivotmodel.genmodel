@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.cs.ontoeventb.pivotmodel.metamodel/src" modelPluginID="fr.cs.ontoeventb.pivotmodel.metamodel"
+    modelName="Pivotmodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>pivotmodel.ecore</foreignModel>
+  <genPackages prefix="Pivotmodel" disposableProviderFactory="true" ecorePackage="pivotmodel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pivotmodel.ecore#//PredefinedType">
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PredefinedType/INTEGER"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PredefinedType/NATURAL"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PredefinedType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PredefinedType/STRING"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pivotmodel.ecore#//PredefinedCollection">
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PredefinedCollection/ARRAY"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PredefinedCollection/SET"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PredefinedCollection/BAG"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PredefinedCollection/LIST"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pivotmodel.ecore#//PredefinedCurrency">
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PredefinedCurrency/EUR"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PredefinedCurrency/USD"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PredefinedCurrency/SUR"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PredefinedCurrency/JPY"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PredefinedCurrency/CNY"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PredefinedCurrency/CHF"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pivotmodel.ecore#//PrefixeType">
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/EXA"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/PETA"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/TERA"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/GIGA"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/MEGA"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/KILO"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/HECTO"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/DECA"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/DECI"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/CENTI"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/MILLI"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/MICRO"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/NANO"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/PICO"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/FEMTO"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//PrefixeType/ATTO"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pivotmodel.ecore#//UnitName">
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/METRE"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/GRAM"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/SECOND"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/AMPERE"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/KELVIN"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/MOLE"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/CANDELA"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/RADIAN"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/STERADIAN"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/HERTZ"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/NEWTON"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/PASCAL"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/JOULE"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/WATT"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/COULOMB"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/VOLT"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/FARAD"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/OHM"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/SIEMENS"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/WEBER"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/TESLA"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/HENRY"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/DEGREE_CELSIUS"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/LUMEN"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/LUX"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/BECQUEREL"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/GRAY"/>
+      <genEnumLiterals ecoreEnumLiteral="pivotmodel.ecore#//UnitName/SIEVERT"/>
+    </genEnums>
+    <genClasses ecoreClass="pivotmodel.ecore#//Ontology">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//Ontology/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//Ontology/containedClasses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//Ontology/containedProperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//Ontology/containedDataTypes"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pivotmodel.ecore#//ClassDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//ClassDefinition/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//ClassDefinition/subClassOf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//ClassDefinition/disjointWith"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//ClassDefinition/equivalentTo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//ClassDefinition/describedBy"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//SimpleClass"/>
+    <genClasses image="false" ecoreClass="pivotmodel.ecore#//PropertyDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//PropertyDefinition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//PropertyDefinition/isFunctional"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//PropertyDefinition/isSymmetric"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//PropertyDefinition/isTransitive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//PropertyDefinition/isInverseFunctional"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//PropertyDefinition/range"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//PropertyDefinition/subPropertyOf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//PropertyDefinition/equivalentTo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//PropertyDefinition/inverseOf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//PropertyDefinition/domain"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//SimpleProperty"/>
+    <genClasses image="false" ecoreClass="pivotmodel.ecore#//DataTypeDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//DataTypeDefinition/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pivotmodel.ecore#//PrimitiveType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//PrimitiveType/basedOn"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//CaseOfClass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//CaseOfClass/caseOf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//CaseOfClass/importedProperties"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pivotmodel.ecore#//RestrictedClass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//RestrictedClass/onProperty"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pivotmodel.ecore#//ValueRestrictedClass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//ValueRestrictedClass/toDataDefinition"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//UniversalClass"/>
+    <genClasses ecoreClass="pivotmodel.ecore#//ExistantialClass"/>
+    <genClasses ecoreClass="pivotmodel.ecore#//HasValueClass"/>
+    <genClasses image="false" ecoreClass="pivotmodel.ecore#//CardinalityRestrictedClass"/>
+    <genClasses ecoreClass="pivotmodel.ecore#//MaxCardinalityClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//MaxCardinalityClass/maxCard"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//MinCardinalityClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//MinCardinalityClass/minCard"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//CardinalityClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//CardinalityClass/card"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//EnumeratedClass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//EnumeratedClass/oneOf"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pivotmodel.ecore#//CombinationClass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//CombinationClass/combinationOf"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//UnionClass"/>
+    <genClasses ecoreClass="pivotmodel.ecore#//IntersectionClass"/>
+    <genClasses ecoreClass="pivotmodel.ecore#//ComplementClass"/>
+    <genClasses ecoreClass="pivotmodel.ecore#//ConditionProperty"/>
+    <genClasses ecoreClass="pivotmodel.ecore#//DependentProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//DependentProperty/dependsOn"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//NotNumericType"/>
+    <genClasses ecoreClass="pivotmodel.ecore#//NumericType"/>
+    <genClasses ecoreClass="pivotmodel.ecore#//MeasureType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//MeasureType/unit"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//CurrencyType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//CurrencyType/currency"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//ClassType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//ClassType/basedOn"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//CollectionType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//CollectionType/collectionOf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//CollectionType/is"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//SingleValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//SingleValue/isOfType"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//EnumeratedType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//EnumeratedType/contains"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//NumberEnumeratedType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//NumberEnumeratedType/contains"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pivotmodel.ecore#//UnitType"/>
+    <genClasses ecoreClass="pivotmodel.ecore#//NamedUnit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//NamedUnit/exponent"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//DerivedUnit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//DerivedUnit/derivedUnitElement"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//NonStandardUnit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//NonStandardUnit/name"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//ConversionBasedUnit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//ConversionBasedUnit/valueComponent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//ConversionBasedUnit/unitComponent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//ConversionBasedUnit/name"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//ContextDependentUnit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//ContextDependentUnit/name"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//StandardUnit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//StandardUnit/prefix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//StandardUnit/name"/>
+    </genClasses>
+    <genClasses ecoreClass="pivotmodel.ecore#//DerivedUnitElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//DerivedUnitElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pivotmodel.ecore#//DerivedUnitElement/exponent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pivotmodel.ecore#//DerivedUnitElement/unit"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

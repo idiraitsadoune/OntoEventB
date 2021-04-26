@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+PARADINE EPTOS XML - 1.0
+File Version: 1.0.2
+-->
+<!--
+
+© ISO 2010 — All rights reserved
+
+Permission is hereby granted, free of charge in perpetuity, to any person obtaining a copy of the Schema, to use, copy, modify, merge and distribute free of charge, copies of the Schema for the purposes of developing, implementing, installing and using software based on the Schema, and to permit persons to whom the Schema is furnished to do so, subject to the following conditions:
+
+THE SCHEMA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SCHEMA OR THE USE OR OTHER DEALINGS IN THE SCHEMA.
+
+In addition, any modified copy of the Schema shall include the following notice:
+
+THIS SCHEMA HAS BEEN MODIFIED FROM THE SCHEMA DEFINED IN ISO 13584-32, ISO/TS 29002-5, AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD
+
+
+
+© Paradine 2011, 2012 - All rights reserved
+
+Paradine tailored schema(s) of various sources in a compatible way in order to fulfill customer requirements and support seamless usage.
+The modified schema is published as EPTOS XML.   
+
+THIS SCHEMA (EPTOS XML) HAS BEEN MODIFIED FROM THE SCHEMA DEFINED IN ISO 13584-32, ISO/TS 29002-5, AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD
+
+Permission is hereby granted, free of charge in perpetuity, to any person obtaining a copy of the Schema, to use, copy, modify, merge and distribute free of charge, copies of the Schema for the purposes of developing, implementing, installing and using software based on the Schema, and to permit persons to whom the Schema is furnished to do so, subject to the following conditions:
+
+The copyright statement of this work, its permission notice and disclaimer shall be included in all copies of this DTD/XML Schema ("the Schema"), and derivations of the Schema:
+
+THE SCHEMA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SCHEMA OR THE USE OR OTHER DEALINGS IN THE SCHEMA.
+
+In addition, any modified copy of the EPTOS XML Schema shall include the following notice:
+
+THIS SCHEMA HAS BEEN MODIFIED FROM THE PARADINE EPTOS XML SCHEMA, AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT SCHEMA
+
+-->
+<xs:schema xmlns="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:idt="urn:iso:std:iso:ts:29002:-5:ed-1:tech:xml-schema:identifier" targetNamespace="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:import namespace="urn:iso:std:iso:ts:29002:-5:ed-1:tech:xml-schema:identifier" schemaLocation="ISO29002/identifier.xsd"/>
+	<xs:include schemaLocation="type_system.xsd"/>
+	<!-- Global element -->
+	<xs:element name="keyword" type="REUSABLE_KEYWORD_Type"/>
+	<xs:element name="synonym" type="REUSABLE_SYNONYM_Type"/>
+	<!-- Simple type definitions -->
+	<xs:simpleType name="ReusableNameId">
+		<xs:restriction base="idt:IRDI_type">
+			<xs:pattern value="([0-9]{4})\-([A-Z0-9:_\.]{1,35})(\-([A-Z0-9:_\.]{1,35})((\-[019])(\-([A-Z0-9]{1,10})_([A-Z0-9]{0,10})_([0-9]{1,5}))?)?)?#TM\-([A-Z0-9:_\.]{1,71})#[0-9]{1,9}"/>
+			<xs:pattern value="([0-9]{4})\-([A-Z0-9:_\.]{1,35})\-([A-Z0-9:_\.]{1,35})\-\-([A-Z0-9]{1,10})_([A-Z0-9]{0,10})_([0-9]{1,5})#Z6\-([A-Z0-9:_\.]{1,71})#[0-9]{1,9}"/>
+			<xs:pattern value="([0-9]{4})\-([A-Z0-9:_\.]{1,35})\-\-\-([A-Z0-9]{1,10})_([A-Z0-9]{0,10})_([0-9]{1,5})#TM\-([A-Z0-9_:\.]{1,71})#[0-9]{1,9}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="KEYWORD_REFERENCE_Type">
+		<xs:restriction base="ReusableNameId"/>
+	</xs:simpleType>
+	<xs:simpleType name="SYNONYM_REFERENCE_Type">
+		<xs:restriction base="ReusableNameId"/>
+	</xs:simpleType>
+	<!-- Complex type definitions -->
+	<xs:complexType name="REUSABLE_NAME_Type" abstract="true">
+		<xs:sequence>
+			<xs:element name="date_of_original_definition" type="DATE_TYPE_Type" minOccurs="0"/>
+			<xs:element name="date_of_current_version" type="DATE_TYPE_Type" minOccurs="0"/>
+			<xs:element name="date_of_current_revision" type="DATE_TYPE_Type" minOccurs="0"/>
+			<xs:element name="revision" type="REVISION_TYPE_Type" minOccurs="0"/>
+			<xs:element name="status" type="STATUS_Type" minOccurs="0"/>
+			<xs:element name="source_language" type="LANGUAGE_Type" minOccurs="0"/>
+			<xs:element name="is_deprecated" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="is_deprecated_interpretation" type="TEXT_Type" minOccurs="0"/>
+			<xs:element name="name" type="KEYWORD_LABEL_Type"/>
+			<xs:element name="icon" type="GRAPHICS_Type" minOccurs="0"/>
+			<xs:element name="note" type="GENERAL_TEXT_Type" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="ReusableNameId" use="required"/>
+		<xs:attribute name="guid" type="EptosGUID"/>
+		<xs:attribute name="guid2" type="EptosGUID"/>
+	</xs:complexType>
+	<xs:complexType name="REUSABLE_KEYWORD_Type">
+		<xs:complexContent>
+			<xs:extension base="REUSABLE_NAME_Type"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="REUSABLE_SYNONYM_Type">
+		<xs:complexContent>
+			<xs:extension base="REUSABLE_NAME_Type"/>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
