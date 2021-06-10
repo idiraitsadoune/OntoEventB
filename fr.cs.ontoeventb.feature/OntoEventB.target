@@ -2,6 +2,6 @@
 <?pde version="3.8"?>
 <target name="Running Platform">
 	<locations>
-		<location path="/Users/idiraitsadoune/Desktop/Development-Desktop/Eclipse-plugins-developments/Rodin-3.6RC.app/Contents/Eclipse" type="Profile"/>
+		<location path="/Users/idiraitsadoune/Desktop/Development-Desktop/Eclipse-plugins-developments/Rodin-3.6.app/Contents/Eclipse" type="Profile"/>
 	</locations>
 </target>

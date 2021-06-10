@@ -16,20 +16,57 @@ class DSLFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(Ontology ontology, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
+/* 		interior(
+        	ontology.regionFor.keyword('{').append[newLine],
+        	ontology.regionFor.keyword('}').prepend[newLine],
+        	[indent]
+    	)*/
+    	ontology.regionFor.keyword('}').prepend[newLine]
+    	
+    	ontology.regionFor.keyword('containedClasses').prepend[newLine]
 		for (classDefinition : ontology.containedClasses) {
 			classDefinition.format
+			interior(
+        	classDefinition.regionFor.keyword('{').append[newLine],
+        	classDefinition.regionFor.keyword('}').prepend[newLine],
+        	[indent]
+    		)
+			classDefinition.prepend[setNewLines(2)]
+			classDefinition.surround[indent]
+			classDefinition.regionFor.keyword('describedBy').prepend[newLine]
 		}
+		
+		ontology.regionFor.keyword('containedProperties').prepend[setNewLines(2)]
 		for (propertyDefinition : ontology.containedProperties) {
 			propertyDefinition.format
+			interior(
+        		propertyDefinition.regionFor.keyword('{').append[newLine],
+        		propertyDefinition.regionFor.keyword('}').prepend[newLine],
+        		[indent]
+    		)
+			propertyDefinition.prepend[setNewLines(2)]
+			propertyDefinition.surround[indent]
+			propertyDefinition.regionFor.keyword('domain').prepend[newLine]
 		}
+		
+		ontology.regionFor.keyword('containedDataTypes').prepend[setNewLines(2)]
 		for (dataTypeDefinition : ontology.containedDataTypes) {
 			dataTypeDefinition.format
+			interior(
+        		dataTypeDefinition.regionFor.keyword('{').append[newLine],
+        		dataTypeDefinition.regionFor.keyword('}').prepend[newLine],
+        		[indent]
+    		)
+			dataTypeDefinition.prepend[setNewLines(2)]
+			dataTypeDefinition.surround[indent]
 		}
+
 	}
 
 	def dispatch void format(MeasureType measureType, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
 		measureType.unit.format
+		measureType.regionFor.keyword('unit').prepend[newLine]
 	}
 	
 	// TODO: implement for DerivedUnit

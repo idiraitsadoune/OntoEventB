@@ -19,11 +19,11 @@ import fr.cs.rodindev.rodinapi.RodinContext;
 import fr.cs.rodindev.rodinapi.RodinCreation;
 import pivotmodel.Ontology;
 
-public class OntoMLT0EventBAction implements IObjectActionDelegate{
+public class OntoMLToEventBAction implements IObjectActionDelegate{
 
 	protected ISelection selection;
 	
-	public OntoMLT0EventBAction () {
+	public OntoMLToEventBAction () {
 		super();
 	}
 	

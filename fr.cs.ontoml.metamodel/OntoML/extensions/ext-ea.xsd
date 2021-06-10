@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+PARADINE EPTOS XML - XML Schema
+File Version: 1.0.1
+-->
+<!--
+© ISO 2010 — All rights reserved
+
+Permission is hereby granted, free of charge in perpetuity, to any person obtaining a copy of the Schema, to use, copy, modify, merge and distribute free of charge, copies of the Schema for the purposes of developing, implementing, installing and using software based on the Schema, and to permit persons to whom the Schema is furnished to do so, subject to the following conditions:
+
+THE SCHEMA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SCHEMA OR THE USE OR OTHER DEALINGS IN THE SCHEMA.
+
+In addition, any modified copy of the Schema shall include the following notice:
+
+THIS SCHEMA HAS BEEN MODIFIED FROM THE SCHEMA DEFINED IN ISO 13584-32, ISO/TS 29002-5, ISO/TS 29002-10 AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD.
+
+
+
+
+© Paradine 2011, 2012 - All rights reserved
+
+Paradine tailored schema(s) of various sources in a compatible way in order to fulfill customer requirements and support seamless usage.
+The modified schema is published as EPTOS XML.   
+
+THIS SCHEMA (EPTOS XML) HAS BEEN MODIFIED FROM THE SCHEMA DEFINED IN ISO 13584-32, ISO/TS 29002-5, ISO/TS 29002-10 AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD
+
+Permission is hereby granted, free of charge in perpetuity, to any person obtaining a copy of the Schema, to use, copy, modify, merge and distribute free of charge, copies of the Schema for the purposes of developing, implementing, installing and using software based on the Schema, and to permit persons to whom the Schema is furnished to do so, subject to the following conditions:
+
+The copyright statement of this work, its permission notice and disclaimer shall be included in all copies of this DTD/XML Schema ("the Schema"), and derivations of the Schema:
+
+THE SCHEMA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SCHEMA OR THE USE OR OTHER DEALINGS IN THE SCHEMA.
+
+In addition, any modified copy of the EPTOS XML Schema shall include the following notice:
+
+THIS SCHEMA HAS BEEN MODIFIED FROM THE PARADINE EPTOS XML SCHEMA, AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT SCHEMA
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:x-ontoml-extensions:schema:core" xmlns:ontoml="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" xmlns:val="urn:iso:std:iso:ts:29002:-10:ed-1:tech:xml-schema:value" xmlns:idt="urn:iso:std:iso:ts:29002:-5:ed-1:tech:xml-schema:identifier" targetNamespace="urn:x-ontoml-extensions:schema:core" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" schemaLocation="../type_system.xsd"/>
+	<xs:import namespace="urn:iso:std:iso:ts:29002:-10:ed-1:tech:xml-schema:value" schemaLocation="../ISO29002/value.xsd"/>
+	<xs:import namespace="urn:iso:std:iso:ts:29002:-5:ed-1:tech:xml-schema:identifier" schemaLocation="../ISO29002/identifier.xsd"/>
+	<!-- Global element -->
+	<xs:element name="ea_template" type="EA_TEMPLATE_Type"/>
+	<xs:element name="entity_eas" type="ENTITY_EXTENDED_ATTRIBUTES_Type"/>
+	<xs:complexType name="EA_REFERENCE_Type">
+		<xs:annotation>
+			<xs:documentation>reference to a EA template</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="template_id" type="EA_TEMPLATE_ID_Type" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ENTITY_EXTENDED_ATTRIBUTES_Type">
+		<xs:annotation>
+			<xs:documentation>General object representing the EA of any intity</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ea" type="EA_VALUATION_Type" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>represents the value of an extended attribute</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="entity_ref" type="idt:IRDI_type" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="EA_VALUATION_Type">
+		<xs:annotation>
+			<xs:documentation>represents the association of a EA</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group ref="val:value_Group"/>
+		</xs:sequence>
+		<xs:attribute name="template_id" type="EA_TEMPLATE_ID_Type" use="required"/>
+	</xs:complexType>
+	<xs:simpleType name="EA_TEMPLATE_ID_Type">
+		<xs:annotation>
+			<xs:documentation>represents the code of an EA</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EA_CODE_Type">
+		<xs:annotation>
+			<xs:documentation>represents the code of an EA</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EA_ENTITY_TYPE_Type">
+		<xs:annotation>
+			<xs:documentation>represents the type of entity associated with the EA</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z0-9]{2}|\*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="EA_TEMPLATE_Type">
+		<xs:sequence>
+			<xs:element name="type_of_entity" type="EA_ENTITY_TYPE_Type">
+				<xs:annotation>
+					<xs:documentation>defines the type of entity the EA is valid for according to the CSI: 01 - classes, 02 - properties</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<!--xs:element name="Name" type="Name" minOccurs="0" maxOccurs="unbounded" /-->
+			<xs:element name="type_of_value" type="ontoml:ANY_TYPE_Type">
+				<xs:annotation>
+					<xs:documentation>it defines the type of value the attribute can transport</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="code" type="EA_CODE_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>code of the EA: e.g. A01, X01, P01</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="source_language" type="ontoml:LANGUAGE_Type">
+				<xs:annotation>
+					<xs:documentation>the language in which the EA was initially defined and that provides 
+the reference meaning in case of translation discrepancy</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="short_name" type="ontoml:SHORT_NAME_Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>the short name of the EA, possibly translated</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="preferred_name" type="ontoml:PREFERRED_NAME_Type" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="EA_TEMPLATE_ID_Type" use="required"/>
+	</xs:complexType>
+</xs:schema>

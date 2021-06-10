@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+PARADINE EPTOS XML - 1.0
+File Version: 1.0.1
+-->
+<!--
+© Paradine 2011, 2012 - All rights reserved
+
+Permission is hereby granted, free of charge in perpetuity, to any person obtaining a copy of the Schema, to use, 
+copy, modify, merge and distribute free of charge, copies of the Schema for the purposes of developing, implementing, 
+installing and using software based on the Schema, and to permit persons to whom the Schema is furnished to do so, 
+subject to the following conditions:
+
+The permission notice and disclaimer shall be included in all copies of this DTD/XML Schema ("the Schema"), 
+and derivations of the Schema:
+
+THE SCHEMA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE 
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS 
+OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SCHEMA OR THE USE OR OTHER DEALINGS IN THE SCHEMA.
+
+In addition, any modified copy of the Schema shall include the following notice:
+
+THIS SCHEMA HAS BEEN MODIFIED FROM THE PARADINE EPTOS XML SCHEMA, AND SHOULD NOT BE INTERPRETED AS COMPLYING 
+
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:x-ontoml-extensions:schema:core" xmlns:ontoml="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" targetNamespace="urn:x-ontoml-extensions:schema:core" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="ext-ea.xsd"/>
+	<xs:include schemaLocation="ext-units.xsd"/>
+	<xs:include schemaLocation="ext-depr.xsd"/>
+	<xs:import namespace="urn:iso:std:iso:is:13584:-32:ed-1:tech:xml-schema:ontoml" schemaLocation="../basic.xsd"/>
+	<xs:element name="extensions" type="EXTENSIONS_Type"/>
+	<xs:complexType name="EXTENSIONS_Type">
+		<xs:sequence>
+			<xs:element name="contained_ea_templates" type="CONTAINED_EA_TEMPLATES_Type" minOccurs="0"/>
+			<xs:element name="contained_ea_instances" type="CONTAINED_EA_INSTANCES_Type" minOccurs="0"/>
+			<xs:element name="contained_aspects_of_conversion" type="CONTAINED_ASPECTS_OF_CONVERSION_Type" minOccurs="0"/>
+			<xs:element name="contained_units" type="CONTAINED_COMPLETE_UNITS_Type" minOccurs="0"/>
+			<xs:element name="contained_quantities" type="CONTAINED_QUANTITIES_Type" minOccurs="0"/>
+			<xs:element name="contained_rel_deprecation" type="CONTAINED_RELATION_DEPRECATION_Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CONTAINED_EA_TEMPLATES_Type">
+		<xs:sequence>
+			<xs:element ref="ea_template" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CONTAINED_EA_INSTANCES_Type">
+		<xs:sequence>
+			<xs:element ref="entity_eas" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CONTAINED_COMPLETE_UNITS_Type">
+		<xs:sequence>
+			<xs:element ref="complete_unit" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CONTAINED_QUANTITIES_Type">
+		<xs:sequence>
+			<xs:element ref="quantity" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CONTAINED_ASPECTS_OF_CONVERSION_Type">
+		<xs:sequence>
+			<xs:element ref="aspect_of_conversion" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CONTAINED_RELATION_DEPRECATION_Type">
+		<xs:sequence>
+			<xs:element ref="deprecation" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- BASIC extensions -->
+	<xs:complexType name="EXTENDED_MATHEMATICAL_STRING_Type">
+		<xs:complexContent>
+			<xs:extension base="ontoml:MATHEMATICAL_STRING_Type">
+				<xs:sequence>
+					<xs:element name="html_representation" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	
+</xs:schema>

@@ -10,8 +10,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.formatting2.AbstractFormatter2;
 import org.eclipse.xtext.formatting2.IFormattableDocument;
+import org.eclipse.xtext.formatting2.IHiddenRegionFormatter;
+import org.eclipse.xtext.formatting2.regionaccess.ISemanticRegion;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import pivotmodel.ClassDefinition;
 import pivotmodel.DataTypeDefinition;
 import pivotmodel.MeasureType;
@@ -26,22 +29,116 @@ public class DSLFormatter extends AbstractFormatter2 {
   private DSLGrammarAccess _dSLGrammarAccess;
   
   protected void _format(final Ontology ontology, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.prepend(this.textRegionExtensions.regionFor(ontology).keyword("}"), _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.prepend(this.textRegionExtensions.regionFor(ontology).keyword("containedClasses"), _function_1);
     EList<ClassDefinition> _containedClasses = ontology.getContainedClasses();
     for (final ClassDefinition classDefinition : _containedClasses) {
-      document.<ClassDefinition>format(classDefinition);
+      {
+        document.<ClassDefinition>format(classDefinition);
+        final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+          it.indent();
+        };
+        document.<ISemanticRegion, ISemanticRegion>interior(
+          document.append(this.textRegionExtensions.regionFor(classDefinition).keyword("{"), _function_2), 
+          document.prepend(this.textRegionExtensions.regionFor(classDefinition).keyword("}"), _function_3), _function_4);
+        final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+          it.setNewLines(2);
+        };
+        document.<ClassDefinition>prepend(classDefinition, _function_5);
+        final Procedure1<IHiddenRegionFormatter> _function_6 = (IHiddenRegionFormatter it) -> {
+          it.indent();
+        };
+        document.<ClassDefinition>surround(classDefinition, _function_6);
+        final Procedure1<IHiddenRegionFormatter> _function_7 = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        document.prepend(this.textRegionExtensions.regionFor(classDefinition).keyword("describedBy"), _function_7);
+      }
     }
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.setNewLines(2);
+    };
+    document.prepend(this.textRegionExtensions.regionFor(ontology).keyword("containedProperties"), _function_2);
     EList<PropertyDefinition> _containedProperties = ontology.getContainedProperties();
     for (final PropertyDefinition propertyDefinition : _containedProperties) {
-      document.<PropertyDefinition>format(propertyDefinition);
+      {
+        document.<PropertyDefinition>format(propertyDefinition);
+        final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+          it.indent();
+        };
+        document.<ISemanticRegion, ISemanticRegion>interior(
+          document.append(this.textRegionExtensions.regionFor(propertyDefinition).keyword("{"), _function_3), 
+          document.prepend(this.textRegionExtensions.regionFor(propertyDefinition).keyword("}"), _function_4), _function_5);
+        final Procedure1<IHiddenRegionFormatter> _function_6 = (IHiddenRegionFormatter it) -> {
+          it.setNewLines(2);
+        };
+        document.<PropertyDefinition>prepend(propertyDefinition, _function_6);
+        final Procedure1<IHiddenRegionFormatter> _function_7 = (IHiddenRegionFormatter it) -> {
+          it.indent();
+        };
+        document.<PropertyDefinition>surround(propertyDefinition, _function_7);
+        final Procedure1<IHiddenRegionFormatter> _function_8 = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        document.prepend(this.textRegionExtensions.regionFor(propertyDefinition).keyword("domain"), _function_8);
+      }
     }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.setNewLines(2);
+    };
+    document.prepend(this.textRegionExtensions.regionFor(ontology).keyword("containedDataTypes"), _function_3);
     EList<DataTypeDefinition> _containedDataTypes = ontology.getContainedDataTypes();
     for (final DataTypeDefinition dataTypeDefinition : _containedDataTypes) {
-      document.<DataTypeDefinition>format(dataTypeDefinition);
+      {
+        document.<DataTypeDefinition>format(dataTypeDefinition);
+        final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        final Procedure1<IHiddenRegionFormatter> _function_6 = (IHiddenRegionFormatter it) -> {
+          it.indent();
+        };
+        document.<ISemanticRegion, ISemanticRegion>interior(
+          document.append(this.textRegionExtensions.regionFor(dataTypeDefinition).keyword("{"), _function_4), 
+          document.prepend(this.textRegionExtensions.regionFor(dataTypeDefinition).keyword("}"), _function_5), _function_6);
+        final Procedure1<IHiddenRegionFormatter> _function_7 = (IHiddenRegionFormatter it) -> {
+          it.setNewLines(2);
+        };
+        document.<DataTypeDefinition>prepend(dataTypeDefinition, _function_7);
+        final Procedure1<IHiddenRegionFormatter> _function_8 = (IHiddenRegionFormatter it) -> {
+          it.indent();
+        };
+        document.<DataTypeDefinition>surround(dataTypeDefinition, _function_8);
+      }
     }
   }
   
   protected void _format(final MeasureType measureType, @Extension final IFormattableDocument document) {
     document.<UnitType>format(measureType.getUnit());
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.prepend(this.textRegionExtensions.regionFor(measureType).keyword("unit"), _function);
   }
   
   public void format(final Object measureType, final IFormattableDocument document) {

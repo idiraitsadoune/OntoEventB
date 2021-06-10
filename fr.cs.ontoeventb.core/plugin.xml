@@ -43,7 +43,7 @@
                menubarPath="fr.cs.impex.pivotmodel.pm2b.menu1/group1">
          </action>
          <action
-               class="fr.cs.impex.pivotmodel.ontoml2b.OntoMLT0EventBAction"
+               class="fr.cs.impex.pivotmodel.ontoml2b.OntoMLToEventBAction"
                enablesFor="1"
                id="fr.cs.impex.pivotmodel.pm2b.ontomltoebaction"
                label="OntoML --&gt; Event-B"
