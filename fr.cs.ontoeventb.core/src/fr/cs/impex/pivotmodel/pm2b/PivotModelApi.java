@@ -65,7 +65,7 @@ public class PivotModelApi {
 		// Les types prédéfinis dans le contexte des ontologies
 		rodinContext.addSet("Thing");
 		rodinContext.addSet("String");
-		
+
 		PivotModelApi.generateCurrencyType(rodinContext);
 		PivotModelApi.generatePrefixe(rodinContext);
 		PivotModelApi.generateStandardUnit(rodinContext);
@@ -106,11 +106,12 @@ public class PivotModelApi {
 		// déclarer la classe classDefinition
 		rodinContext.addConstant(classDefinition.getName());
 		PivotModelApi.usedClasses.add(classDefinition);
-		
+
 		// if (!classDefinition.getName().contains("ClassDefinition"))
 		rodinContext.addAxiom(new RodinElement("", classDefinition.getName() + " is a Class",
 				classDefinition.getName() + " \u2286 Thing"));
-		
+
+		// traiter la clause Sub Class Of de la classe classDefinition
 		PivotModelApi.computeSubClassOf(classDefinition, rodinContext);
 		// Traiter la clause Disjoint With de la classe classDefinition
 		PivotModelApi.computeDisjointWith(classDefinition, rodinContext);
@@ -118,7 +119,6 @@ public class PivotModelApi {
 		PivotModelApi.computeEquivalentTo(classDefinition, rodinContext);
 		// Traiter la clause described by de la classe classDefinition
 		PivotModelApi.computeDescribedBy(classDefinition, rodinContext);
-		// traiter la clause Sub Class Of de la classe classDefinition
 
 		// traiter la classe simple
 		if (classDefinition instanceof SimpleClass)
@@ -138,7 +138,7 @@ public class PivotModelApi {
 		else
 			rodinContext.addAxiom(new RodinElement("", classDefinition.getName() + " is a Class",
 					classDefinition.getName() + " \u2286 XXXXX"));
-		
+
 	}
 
 	/******************************************************************
@@ -263,8 +263,12 @@ public class PivotModelApi {
 			if (!PivotModelApi.usedData.contains(universalClass.getToDataDefinition()))
 				PivotModelApi.computeDataTypeDefinition(universalClass.getToDataDefinition(), rodinContext);
 			String ran = "Thing";
-			if (universalClass.getOnProperty().getRange() != null)
-				ran = universalClass.getOnProperty().getRange().getName();
+			if (universalClass.getOnProperty().getRange() != null) {
+				if(universalClass.getOnProperty().getRange() instanceof ClassType)
+					ran = ((ClassType) (universalClass.getOnProperty().getRange())).getBasedOn().getName();
+				else 
+					ran = universalClass.getOnProperty().getRange().getName();
+			}
 			String axm = rc + " = " + prop + "\u223C\u005B" + ranConst + "\u005D\u2216" + prop + "\u223C\u005B" + ran
 					+ "\u2216" + ranConst + "\u005D";
 			rodinContext.addAxiom(new RodinElement("", rc + " All values from definition Class", axm));
@@ -414,37 +418,40 @@ public class PivotModelApi {
 		// traitement du domaine et du range
 		String dom = "Thing";
 		String range = "Thing";
-		
+
 		if (propertyDefinition.getDomain() != null) {
 			if (!PivotModelApi.usedClasses.contains(propertyDefinition.getDomain()))
 				PivotModelApi.computeClassDefinition(propertyDefinition.getDomain(), rodinContext);
 			dom = propertyDefinition.getDomain().getName();
 		}
-		
+
 		if (propertyDefinition.getRange() != null) {
-			if (!PivotModelApi.usedData.contains(propertyDefinition.getRange())) {
+			if ("TThing".equals(propertyDefinition.getRange().getName()))
+				range = "Thing";
+			else if (propertyDefinition.getRange() instanceof ClassType) {
+				if (!PivotModelApi.usedClasses.contains(((ClassType) (propertyDefinition.getRange())).getBasedOn()))
+					PivotModelApi.computeClassDefinition(((ClassType) (propertyDefinition.getRange())).getBasedOn(),
+							rodinContext);
+				range = ((ClassType) propertyDefinition.getRange()).getBasedOn().getName();
+			} else if (!PivotModelApi.usedData.contains(propertyDefinition.getRange())) {
 				range = PivotModelApi.computeDataTypeDefinition(propertyDefinition.getRange(), rodinContext);
-				//rodinContext.addAxiom(new RodinElement("", propertyDefinition.getName() + " is a Property",
-				//		propertyDefinition.getName() + " \u2208 " + dom + " \u2194 " + range));
-			} else {
-				if ("TString".equals(propertyDefinition.getRange().getName()))
-					range = "String";
-				else if ("TBoolean".equals(propertyDefinition.getRange().getName()))
-					range = "BOOL";
-				else if ("TInteger".equals(propertyDefinition.getRange().getName()))
-					range = "\u2124";
-				else if ("TNatural".equals(propertyDefinition.getRange().getName()))
-					range = "\u2115";
-				else if (propertyDefinition.getRange() instanceof ClassType)
-					range = ((ClassType) propertyDefinition.getRange()).getBasedOn().getName();
-				else
-					range = propertyDefinition.getRange().getName();
-			}
+				// rodinContext.addAxiom(new RodinElement("", propertyDefinition.getName() + "
+				// is a Property",
+				// propertyDefinition.getName() + " \u2208 " + dom + " \u2194 " + range));
+			} else if ("TString".equals(propertyDefinition.getRange().getName()))
+				range = "String";
+			else if ("TBoolean".equals(propertyDefinition.getRange().getName()))
+				range = "BOOL";
+			else if ("TInteger".equals(propertyDefinition.getRange().getName()))
+				range = "\u2124";
+			else if ("TNatural".equals(propertyDefinition.getRange().getName()))
+				range = "\u2115";
+			else
+				range = propertyDefinition.getRange().getName();
 		}
-		
+
 		rodinContext.addAxiom(new RodinElement("", propertyDefinition.getName() + " is a Property",
 				propertyDefinition.getName() + " \u2208 " + dom + " \u2194 " + range));
-		
 
 		// traiter la propriete isFunctional
 		if (!"Thing".equals(dom) && range != null && propertyDefinition.isIsFunctional())
@@ -504,8 +511,8 @@ public class PivotModelApi {
 	public static String computeDataTypeDefinition(DataTypeDefinition dataTypeDefinition, RodinContext rodinContext) {
 
 		if (!"TString".equals(dataTypeDefinition.getName()) && !"TBoolean".equals(dataTypeDefinition.getName())
-				&& !"TInteger".equals(dataTypeDefinition.getName())
-				&& !"TNatural".equals(dataTypeDefinition.getName())) {
+				&& !"TInteger".equals(dataTypeDefinition.getName()) && !"TNatural".equals(dataTypeDefinition.getName())
+				&& !"TThing".equals(dataTypeDefinition.getName())) {
 
 			// Type primitif
 			if (dataTypeDefinition instanceof PrimitiveType) {
@@ -515,12 +522,13 @@ public class PivotModelApi {
 				return dataTypeDefinition.getName();
 			}
 			// Les Objets d'une classe
-			else if (dataTypeDefinition instanceof ClassType) {
-				rodinContext.addConstant(dataTypeDefinition.getName());
-				PivotModelApi.usedData.add(dataTypeDefinition);
-				PivotModelApi.computeClassType((ClassType) dataTypeDefinition, rodinContext);
-				return dataTypeDefinition.getName();
-			}
+			/*
+			 * else if (dataTypeDefinition instanceof ClassType) {
+			 * rodinContext.addConstant(dataTypeDefinition.getName());
+			 * PivotModelApi.usedData.add(dataTypeDefinition);
+			 * PivotModelApi.computeClassType((ClassType) dataTypeDefinition, rodinContext);
+			 * return dataTypeDefinition.getName(); }
+			 */
 
 			// EnumeratedType of PM
 			else if (dataTypeDefinition instanceof EnumeratedType) {
@@ -557,7 +565,9 @@ public class PivotModelApi {
 				rodinContext.addConstant(dataTypeDefinition.getName());
 				PivotModelApi.usedData.add(dataTypeDefinition);
 				String set = ((SingleValue) dataTypeDefinition).getIsOfType().getName();
-				if ("TString".equals(set))
+				if(((SingleValue) dataTypeDefinition).getIsOfType() instanceof ClassType)
+					set = ((ClassType)  ((SingleValue) dataTypeDefinition).getIsOfType()).getBasedOn().getName(); 
+				else if ("TString".equals(set))
 					set = "String";
 				else if ("TBoolean".equals(set))
 					set = "BOOL";

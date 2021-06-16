@@ -25,8 +25,7 @@ public class OwlModelApi {
 	/***************************************************
 	 * Méthode pour lire un fichier .owl (OWL Model)
 	 * 
-	 * @param IFile
-	 *            file
+	 * @param IFile file
 	 * @return OntModel
 	 ****************************************************/
 	public static OntModel readOwlFile(IFile file) {
@@ -48,10 +47,8 @@ public class OwlModelApi {
 	/********************************************************************
 	 * Méthode pour générer un fichier à partir d'une ontology
 	 * 
-	 * @param Ontology
-	 *            ontology
-	 * @param String
-	 *            path
+	 * @param Ontology ontology
+	 * @param String   path
 	 ********************************************************************/
 	public static void savePmModel(Ontology ontology, String path) {
 
@@ -70,8 +67,7 @@ public class OwlModelApi {
 	/*******************************************************************
 	 * Méthode pour créer une ontology PM à partir d'un modèle OWL
 	 * 
-	 * @param OntModel
-	 *            ontModel
+	 * @param OntModel ontModel
 	 * @return Ontology
 	 *******************************************************************/
 	public static Ontology owlModelToPmOntology(String name, OntModel ontModel) {
@@ -98,10 +94,8 @@ public class OwlModelApi {
 	/******************************************************
 	 * Méthode pour traiter les classes du modèle OWL
 	 * 
-	 * @param OntModel
-	 *            ontModel
-	 * @param Ontology
-	 *            pmOntology
+	 * @param OntModel ontModel
+	 * @param Ontology pmOntology
 	 ******************************************************/
 	public static void computeClasses(OntModel ontModel, Ontology pmOntology) {
 
@@ -113,10 +107,8 @@ public class OwlModelApi {
 	/************************************************************
 	 * Créer une Pivot model class à partir d'une classe OWL
 	 * 
-	 * @param OntClass
-	 *            ontClass
-	 * @param Ontology
-	 *            pmOntology
+	 * @param OntClass ontClass
+	 * @param Ontology pmOntology
 	 * @return Pivot model class
 	 *************************************************************/
 	public static ClassDefinition createNewClass(OntClass ontClass, Ontology pmOntology) {
@@ -128,7 +120,7 @@ public class OwlModelApi {
 
 		if (!ontClass.isAnon() && !"Resource".equals(ontClass.getLocalName()))
 			name = ontClass.getLocalName().replace('-', '_');
-		
+
 		else if (ontClass.isAnon()) {
 			OwlModelApi.nbAnonymousClasses++;
 			name = "ClassDefinition_" + OwlModelApi.nbAnonymousClasses;
@@ -250,16 +242,15 @@ public class OwlModelApi {
 	/**********************************************************************************
 	 * Méthode qui vérifie si la classe OWL ontClass a été déjà traitée
 	 * 
-	 * @param OntClass
-	 *            ontClass
-	 * @param Ontology
-	 *            pmOntology
+	 * @param OntClass ontClass
+	 * @param Ontology pmOntology
 	 * @return ClassDefinition
 	 *******************************************************************/
 	public static ClassDefinition classIsTreated(OntClass ontClass, Ontology pmOntology) {
-		
-		if(ontClass.isAnon()) return null;
-		
+
+		if (ontClass.isAnon())
+			return null;
+
 		for (ClassDefinition cd : pmOntology.getContainedClasses())
 			if (cd.getName().equals(ontClass.getLocalName().replace('-', '_')))
 				return cd;
@@ -286,10 +277,8 @@ public class OwlModelApi {
 	/**************************************************************
 	 * Creation d'une propriete PM à partir d'une propriete OWL
 	 * 
-	 * @param OntProperty
-	 *            ontProperty
-	 * @param Ontology
-	 *            pmOntology
+	 * @param OntProperty ontProperty
+	 * @param Ontology    pmOntology
 	 * @return PropertyDefinition
 	 **************************************************************/
 	public static PropertyDefinition createNewProperty(OntProperty ontProperty, Ontology pmOntology) {
@@ -297,8 +286,6 @@ public class OwlModelApi {
 		String name;
 
 		// Vérifier si la propriete a déjà été traitée
-		
-		
 		PropertyDefinition propertyDefinition = OwlModelApi.propertyIsTreated(ontProperty, pmOntology);
 		if (propertyDefinition != null)
 			return propertyDefinition;
@@ -363,16 +350,15 @@ public class OwlModelApi {
 	/********************************************************
 	 * Méthode qui vérifie si la propriete a déjà été traitée
 	 * 
-	 * @param OntProperty
-	 *            ontProperty
-	 * @param Ontology
-	 *            pmOntology
+	 * @param OntProperty ontProperty
+	 * @param Ontology    pmOntology
 	 * @return PropertyDefinition
 	 *******************************************************/
 	public static PropertyDefinition propertyIsTreated(OntProperty ontProperty, Ontology pmOntology) {
-		
-		if(ontProperty.isAnon()) return null;
-		
+
+		if (ontProperty.isAnon())
+			return null;
+
 		for (PropertyDefinition pd : pmOntology.getContainedProperties())
 			if (pd.getName().equals(ontProperty.getLocalName().replace('-', '_')))
 				return pd;
@@ -383,10 +369,8 @@ public class OwlModelApi {
 	/******************************************
 	 * Creer un nouveau DataType à partir d'une ressource OWL
 	 * 
-	 * @param OntResource
-	 *            ontResource
-	 * @param Ontology
-	 *            pmOntology
+	 * @param OntResource ontResource
+	 * @param Ontology    pmOntology
 	 * @return DataTypeDefinition
 	 *******************************************/
 	public static DataTypeDefinition createNewDataType(OntResource ontResource, Ontology pmOntology) {
@@ -415,7 +399,7 @@ public class OwlModelApi {
 		else if ("dateTime".equals(ontResource.getLocalName()))
 			return pmOntology.getContainedDataTypes().get(1);
 
-		else if ("Boolean".equals(ontResource.getLocalName()))
+		else if ("boolean".equals(ontResource.getLocalName()))
 			return pmOntology.getContainedDataTypes().get(2);
 
 		else if ("string".equals(ontResource.getLocalName()))
@@ -460,8 +444,7 @@ public class OwlModelApi {
 	/*********************************************************
 	 * Méthode qui ajoute les types prédéfinis à l'ontologie
 	 * 
-	 * @param Ontology
-	 *            pmOntology
+	 * @param Ontology pmOntology
 	 **********************************************************/
 	public static void createPredefinedType(Ontology pmOntology) {
 
