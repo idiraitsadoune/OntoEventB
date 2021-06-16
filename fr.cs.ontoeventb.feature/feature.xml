@@ -2,7 +2,7 @@
 <feature
       id="fr.cs.ontoeventb.feature"
       label="OntoEventB"
-      version="1.0.0.qualifier"
+      version="1.0.1.qualifier"
       provider-name="CentraleSupelec">
 
    <description url="https://wdi.supelec.fr/software/OntoEventB">

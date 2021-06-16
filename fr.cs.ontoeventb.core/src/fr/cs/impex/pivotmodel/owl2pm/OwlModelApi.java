@@ -127,7 +127,8 @@ public class OwlModelApi {
 			return classDefinition;
 
 		if (!ontClass.isAnon() && !"Resource".equals(ontClass.getLocalName()))
-			name = ontClass.getLocalName();
+			name = ontClass.getLocalName().replace('-', '_');
+		
 		else if (ontClass.isAnon()) {
 			OwlModelApi.nbAnonymousClasses++;
 			name = "ClassDefinition_" + OwlModelApi.nbAnonymousClasses;
@@ -256,9 +257,11 @@ public class OwlModelApi {
 	 * @return ClassDefinition
 	 *******************************************************************/
 	public static ClassDefinition classIsTreated(OntClass ontClass, Ontology pmOntology) {
-
+		
+		if(ontClass.isAnon()) return null;
+		
 		for (ClassDefinition cd : pmOntology.getContainedClasses())
-			if (cd.getName().equals(ontClass.getLocalName()))
+			if (cd.getName().equals(ontClass.getLocalName().replace('-', '_')))
 				return cd;
 
 		return null;
@@ -294,13 +297,15 @@ public class OwlModelApi {
 		String name;
 
 		// Vérifier si la propriete a déjà été traitée
+		
+		
 		PropertyDefinition propertyDefinition = OwlModelApi.propertyIsTreated(ontProperty, pmOntology);
 		if (propertyDefinition != null)
 			return propertyDefinition;
 
 		// traitement des properietes anonymes
 		if (!ontProperty.isAnon() && !"Resource".equals(ontProperty.getLocalName()))
-			name = ontProperty.getLocalName();
+			name = ontProperty.getLocalName().replace('-', '_');
 		else if (ontProperty.isAnon()) {
 			OwlModelApi.nbAnonymousProperties++;
 			name = "propertyDefinition_" + OwlModelApi.nbAnonymousProperties;
@@ -365,9 +370,11 @@ public class OwlModelApi {
 	 * @return PropertyDefinition
 	 *******************************************************/
 	public static PropertyDefinition propertyIsTreated(OntProperty ontProperty, Ontology pmOntology) {
-
+		
+		if(ontProperty.isAnon()) return null;
+		
 		for (PropertyDefinition pd : pmOntology.getContainedProperties())
-			if (pd.getName().equals(ontProperty.getLocalName()))
+			if (pd.getName().equals(ontProperty.getLocalName().replace('-', '_')))
 				return pd;
 
 		return null;

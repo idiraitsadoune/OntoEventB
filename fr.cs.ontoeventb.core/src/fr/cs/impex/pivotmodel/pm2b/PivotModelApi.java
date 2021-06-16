@@ -26,8 +26,7 @@ public class PivotModelApi {
 	/***************************************************
 	 * Méthode pour lire un fichier .pm (Pivot Model)
 	 * 
-	 * @param IFile
-	 *            file
+	 * @param IFile file
 	 * @return Ontology
 	 ****************************************************/
 	public static Ontology readOntology(IFile file) {
@@ -52,8 +51,7 @@ public class PivotModelApi {
 	/********************************************************************
 	 * Méthode pour créer un Context à partir d'une ontology Pivot Model
 	 * 
-	 * @param Ontology
-	 *            ontology
+	 * @param Ontology ontology
 	 * @return RodinContext
 	 ********************************************************************/
 	public static RodinContext pivotModelToContext(Ontology ontology) {
@@ -67,6 +65,7 @@ public class PivotModelApi {
 		// Les types prédéfinis dans le contexte des ontologies
 		rodinContext.addSet("Thing");
 		rodinContext.addSet("String");
+		
 		PivotModelApi.generateCurrencyType(rodinContext);
 		PivotModelApi.generatePrefixe(rodinContext);
 		PivotModelApi.generateStandardUnit(rodinContext);
@@ -100,13 +99,18 @@ public class PivotModelApi {
 	 ****************************************************/
 	public static void computeClassDefinition(ClassDefinition classDefinition, RodinContext rodinContext) {
 
+		// pour éviter de traiter une référence à Thing dans OWL
+		if (classDefinition.getName().equals("Thing"))
+			return;
+
 		// déclarer la classe classDefinition
 		rodinContext.addConstant(classDefinition.getName());
-		if (!classDefinition.getName().contains("ClassDefinition"))
-			rodinContext.addAxiom(new RodinElement("", classDefinition.getName() + " is a Class",
-					classDefinition.getName() + " \u2286 Thing"));
 		PivotModelApi.usedClasses.add(classDefinition);
-
+		
+		// if (!classDefinition.getName().contains("ClassDefinition"))
+		rodinContext.addAxiom(new RodinElement("", classDefinition.getName() + " is a Class",
+				classDefinition.getName() + " \u2286 Thing"));
+		
 		PivotModelApi.computeSubClassOf(classDefinition, rodinContext);
 		// Traiter la clause Disjoint With de la classe classDefinition
 		PivotModelApi.computeDisjointWith(classDefinition, rodinContext);
@@ -131,6 +135,10 @@ public class PivotModelApi {
 		// traiter la classe combination
 		else if (classDefinition instanceof CombinationClass)
 			PivotModelApi.computeCombinationClass((CombinationClass) classDefinition, rodinContext);
+		else
+			rodinContext.addAxiom(new RodinElement("", classDefinition.getName() + " is a Class",
+					classDefinition.getName() + " \u2286 XXXXX"));
+		
 	}
 
 	/******************************************************************
@@ -254,7 +262,9 @@ public class PivotModelApi {
 				ranConst = ((ClassType) universalClass.getToDataDefinition()).getBasedOn().getName();
 			if (!PivotModelApi.usedData.contains(universalClass.getToDataDefinition()))
 				PivotModelApi.computeDataTypeDefinition(universalClass.getToDataDefinition(), rodinContext);
-			String ran = universalClass.getOnProperty().getRange().getName();
+			String ran = "Thing";
+			if (universalClass.getOnProperty().getRange() != null)
+				ran = universalClass.getOnProperty().getRange().getName();
 			String axm = rc + " = " + prop + "\u223C\u005B" + ranConst + "\u005D\u2216" + prop + "\u223C\u005B" + ran
 					+ "\u2216" + ranConst + "\u005D";
 			rodinContext.addAxiom(new RodinElement("", rc + " All values from definition Class", axm));
@@ -403,17 +413,19 @@ public class PivotModelApi {
 
 		// traitement du domaine et du range
 		String dom = "Thing";
-		String range = null;
+		String range = "Thing";
+		
 		if (propertyDefinition.getDomain() != null) {
 			if (!PivotModelApi.usedClasses.contains(propertyDefinition.getDomain()))
 				PivotModelApi.computeClassDefinition(propertyDefinition.getDomain(), rodinContext);
 			dom = propertyDefinition.getDomain().getName();
 		}
+		
 		if (propertyDefinition.getRange() != null) {
 			if (!PivotModelApi.usedData.contains(propertyDefinition.getRange())) {
 				range = PivotModelApi.computeDataTypeDefinition(propertyDefinition.getRange(), rodinContext);
-				rodinContext.addAxiom(new RodinElement("", propertyDefinition.getName() + " is a Property",
-						propertyDefinition.getName() + " \u2208 " + dom + " \u2194 " + range));
+				//rodinContext.addAxiom(new RodinElement("", propertyDefinition.getName() + " is a Property",
+				//		propertyDefinition.getName() + " \u2208 " + dom + " \u2194 " + range));
 			} else {
 				if ("TString".equals(propertyDefinition.getRange().getName()))
 					range = "String";
@@ -427,10 +439,12 @@ public class PivotModelApi {
 					range = ((ClassType) propertyDefinition.getRange()).getBasedOn().getName();
 				else
 					range = propertyDefinition.getRange().getName();
-				rodinContext.addAxiom(new RodinElement("", propertyDefinition.getName() + " is a Property",
-						propertyDefinition.getName() + " \u2208 " + dom + " \u2194 " + range));
 			}
 		}
+		
+		rodinContext.addAxiom(new RodinElement("", propertyDefinition.getName() + " is a Property",
+				propertyDefinition.getName() + " \u2208 " + dom + " \u2194 " + range));
+		
 
 		// traiter la propriete isFunctional
 		if (!"Thing".equals(dom) && range != null && propertyDefinition.isIsFunctional())
@@ -576,10 +590,8 @@ public class PivotModelApi {
 	/**********************************************************
 	 * Méthode pour traiter un type primitif du modèle pivot
 	 * 
-	 * @param PrimitiveType
-	 *            primitiveType
-	 * @param RodinContext
-	 *            rodinContext
+	 * @param PrimitiveType primitiveType
+	 * @param RodinContext  rodinContext
 	 ***********************************************************/
 	public static void computePrimitiveType(PrimitiveType primitiveType, RodinContext rodinContext) {
 
@@ -669,21 +681,19 @@ public class PivotModelApi {
 		}
 
 	}
-	
+
 	/***********************************************************************************
 	 * Méthode pour traiter le type de donnée correspondant à une classe de
 	 * l'ontology
 	 * 
-	 * @param ClassType
-	 *            classType
-	 * @param RodinContext
-	 *            rodinContext
+	 * @param ClassType    classType
+	 * @param RodinContext rodinContext
 	 ***********************************************************************************/
 	public static void computeClassType(ClassType classType, RodinContext rodinContext) {
 
 		if (!PivotModelApi.usedClasses.contains(classType.getBasedOn()))
 			PivotModelApi.computeClassDefinition(classType.getBasedOn(), rodinContext);
-		
+
 		rodinContext.addAxiom(new RodinElement("", classType.getName() + " Type",
 				classType.getName() + " \u2286 " + classType.getBasedOn().getName()));
 	}
@@ -691,8 +701,7 @@ public class PivotModelApi {
 	/**************************************************
 	 * Convertir ne type name dans un type event-B
 	 * 
-	 * @param String
-	 *            name
+	 * @param String name
 	 * @return String
 	 ***************************************************/
 	public static String EventBName(String name) {
@@ -710,8 +719,7 @@ public class PivotModelApi {
 	/********************************************************
 	 * Générer le type Currency dans le context Event-B
 	 * 
-	 * @param RodinContext
-	 *            rodinContext
+	 * @param RodinContext rodinContext
 	 ********************************************************/
 	public static void generateCurrencyType(RodinContext rodinContext) {
 		rodinContext.addSet("PredefinedCurrency");
@@ -728,8 +736,7 @@ public class PivotModelApi {
 	/********************************************************
 	 * Générer les prefixe d'unités dans le context Event-B
 	 * 
-	 * @param RodinContext
-	 *            rodinContext
+	 * @param RodinContext rodinContext
 	 ********************************************************/
 	public static void generatePrefixe(RodinContext rodinContext) {
 		rodinContext.addSet("PredefinedPrefix");
