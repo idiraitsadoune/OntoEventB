@@ -63,6 +63,13 @@
                label="OntoML --&gt; Event-B"
                menubarPath="fr.cs.ontoeventb.core.menu1/group1">
          </action>
+         <action
+               class="fr.cs.ontoeventb.core.ontoml2isadof.OntoMLToIsaDofAction"
+               enablesFor="1"
+               id="fr.cs.ontoeventb.core.ontomltoisadofaction"
+               label="OntoML --&gt; IsaDof"
+               menubarPath="fr.cs.ontoeventb.core.menu1/group1">
+         </action>
       </objectContribution>
    </extension>
 
