@@ -10,6 +10,6 @@
 	</parent>
 
 	<artifactId>fr.cs.ontoeventb.core</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
 </project>

@@ -7,11 +7,11 @@
             id="fr.cs.ontoeventb.core.pm2b.objectContribution1"
             objectClass="org.eclipse.core.resources.IFile">
          <menu
-               id="fr.cs.ontoeventb.core.pm2b.menu1"
+               id="fr.cs.ontoeventb.core.menu1"
                label="OntoEventB"
                path="additions">
             <separator
-                  name="fr.cs.ontoeventb.core.pm2b.separator1">
+                  name="fr.cs.ontoeventb.core.separator1">
             </separator>
          </menu>
          <action
@@ -19,35 +19,42 @@
                enablesFor="1"
                id="fr.cs.ontoeventb.core.pm2b.pmtoeventbaction"
                label="PivotModel --&gt; Event-B"
-               menubarPath="fr.cs.ontoeventb.core.pm2b.menu1/group1">
+               menubarPath="fr.cs.ontoeventb.core.menu1/group1">
+         </action>
+         <action
+               class="fr.cs.ontoeventb.core.pm2isadof.PmToIsaDofAction"
+               enablesFor="1"
+               id="fr.cs.ontoeventb.core.pm2isadof.pm2isadofaction"
+               label="PivotModel --&gt; IsaDof"
+               menubarPath="fr.cs.ontoeventb.core.menu1/group1">
          </action>
          <action
                class="fr.cs.ontoeventb.core.owl2pm.OwlToPmAction"
                enablesFor="1"
                id="fr.cs.ontoeventb.core.pm2b.owltopmaction"
                label="OWL --&gt; PivotModel "
-               menubarPath="fr.cs.ontoeventb.core.pm2b.menu1/group1">
+               menubarPath="fr.cs.ontoeventb.core.menu1/group1">
          </action>
          <action
                class="fr.cs.ontoeventb.core.owl2b.OwlToEventBAction"
                enablesFor="1"
                id="fr.cs.ontoeventb.core.pm2b.owltoeventbaction"
                label="OWL --&gt; Event-B"
-               menubarPath="fr.cs.ontoeventb.core.pm2b.menu1/group1">
+               menubarPath="fr.cs.ontoeventb.core.menu1/group1">
          </action>
          <action
                class="fr.cs.ontoeventb.core.ontoml2pm.OntoMLToPmAction"
                enablesFor="1"
                id="fr.cs.ontoeventb.core.pm2b.ontomltopmaction"
                label="OntoML --&gt; PivotModel "
-               menubarPath="fr.cs.ontoeventb.core.pm2b.menu1/group1">
+               menubarPath="fr.cs.ontoeventb.core.menu1/group1">
          </action>
          <action
                class="fr.cs.ontoeventb.core.ontoml2b.OntoMLToEventBAction"
                enablesFor="1"
                id="fr.cs.ontoeventb.core.pm2b.ontomltoebaction"
                label="OntoML --&gt; Event-B"
-               menubarPath="fr.cs.ontoeventb.core.pm2b.menu1/group1">
+               menubarPath="fr.cs.ontoeventb.core.menu1/group1">
          </action>
       </objectContribution>
    </extension>

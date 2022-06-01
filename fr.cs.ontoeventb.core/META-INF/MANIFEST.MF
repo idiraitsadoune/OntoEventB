@@ -3,7 +3,7 @@ Automatic-Module-Name: fr.cs.ontoeventb.core
 Bundle-ManifestVersion: 2
 Bundle-Name: OntoEventB Core
 Bundle-SymbolicName: fr.cs.ontoeventb.core;singleton:=true
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.0.2.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources,
