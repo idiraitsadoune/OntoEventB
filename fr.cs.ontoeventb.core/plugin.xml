@@ -15,44 +15,51 @@
             </separator>
          </menu>
          <action
-               class="fr.cs.ontoeventb.core.pm2b.PmToEventBAction"
+               class="fr.cs.ontoeventb.core.PmToEventBAction"
                enablesFor="1"
-               id="fr.cs.ontoeventb.core.pm2b.pmtoeventbaction"
+               id="fr.cs.ontoeventb.core.pmtoeventbaction"
                label="PivotModel --&gt; Event-B"
                menubarPath="fr.cs.ontoeventb.core.menu1/group1">
          </action>
          <action
                class="fr.cs.ontoeventb.core.pm2isadof.PmToIsaDofAction"
                enablesFor="1"
-               id="fr.cs.ontoeventb.core.pm2isadof.pm2isadofaction"
+               id="fr.cs.ontoeventb.core.pm2isadofaction"
                label="PivotModel --&gt; IsaDof"
                menubarPath="fr.cs.ontoeventb.core.menu1/group1">
          </action>
          <action
                class="fr.cs.ontoeventb.core.owl2pm.OwlToPmAction"
                enablesFor="1"
-               id="fr.cs.ontoeventb.core.pm2b.owltopmaction"
+               id="fr.cs.ontoeventb.core.owltopmaction"
                label="OWL --&gt; PivotModel "
                menubarPath="fr.cs.ontoeventb.core.menu1/group1">
          </action>
          <action
                class="fr.cs.ontoeventb.core.owl2b.OwlToEventBAction"
                enablesFor="1"
-               id="fr.cs.ontoeventb.core.pm2b.owltoeventbaction"
+               id="fr.cs.ontoeventb.core.owltoeventbaction"
                label="OWL --&gt; Event-B"
+               menubarPath="fr.cs.ontoeventb.core.menu1/group1">
+         </action>
+         <action
+               class="fr.cs.ontoeventb.core.owl2isadof.OwlToIsaDofAction"
+               enablesFor="1"
+               id="fr.cs.ontoeventb.core.owltoisadofaction"
+               label="OWL --&gt; IsaDof"
                menubarPath="fr.cs.ontoeventb.core.menu1/group1">
          </action>
          <action
                class="fr.cs.ontoeventb.core.ontoml2pm.OntoMLToPmAction"
                enablesFor="1"
-               id="fr.cs.ontoeventb.core.pm2b.ontomltopmaction"
+               id="fr.cs.ontoeventb.core.ontomltopmaction"
                label="OntoML --&gt; PivotModel "
                menubarPath="fr.cs.ontoeventb.core.menu1/group1">
          </action>
          <action
                class="fr.cs.ontoeventb.core.ontoml2b.OntoMLToEventBAction"
                enablesFor="1"
-               id="fr.cs.ontoeventb.core.pm2b.ontomltoebaction"
+               id="fr.cs.ontoeventb.core.ontomltoebaction"
                label="OntoML --&gt; Event-B"
                menubarPath="fr.cs.ontoeventb.core.menu1/group1">
          </action>
