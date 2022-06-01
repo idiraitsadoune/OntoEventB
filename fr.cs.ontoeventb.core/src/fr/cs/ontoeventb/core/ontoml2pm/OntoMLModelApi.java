@@ -1,4 +1,4 @@
-package fr.cs.impex.pivotmodel.ontoml2pm;
+package fr.cs.ontoeventb.core.ontoml2pm;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;

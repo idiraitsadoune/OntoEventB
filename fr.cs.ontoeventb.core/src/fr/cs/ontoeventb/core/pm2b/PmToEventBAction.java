@@ -1,4 +1,4 @@
-package fr.cs.impex.pivotmodel.pm2b;
+package fr.cs.ontoeventb.core.pm2b;
 
 import java.util.Collections;
 import java.util.List;
@@ -11,8 +11,8 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.rodinp.core.*;
 
-import fr.cs.rodindev.rodinapi.RodinContext;
-import fr.cs.rodindev.rodinapi.RodinCreation;
+import fr.cs.ontoeventb.core.rodinapi.RodinContext;
+import fr.cs.ontoeventb.core.rodinapi.RodinCreation;
 import pivotmodel.Ontology;
 
 public class PmToEventBAction implements IObjectActionDelegate{

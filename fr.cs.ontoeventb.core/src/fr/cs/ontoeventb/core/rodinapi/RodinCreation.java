@@ -1,4 +1,4 @@
-package fr.cs.rodindev.rodinapi;
+package fr.cs.ontoeventb.core.rodinapi;
 
 import org.eclipse.core.resources.IWorkspaceRunnable;
 import org.eclipse.core.runtime.CoreException;

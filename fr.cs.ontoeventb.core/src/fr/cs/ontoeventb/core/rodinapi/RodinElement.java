@@ -1,4 +1,4 @@
-package fr.cs.rodindev.rodinapi;
+package fr.cs.ontoeventb.core.rodinapi;
 
 public class RodinElement {
 	private String label;

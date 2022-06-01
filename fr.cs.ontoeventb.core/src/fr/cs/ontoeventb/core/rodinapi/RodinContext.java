@@ -1,4 +1,4 @@
-package fr.cs.rodindev.rodinapi;
+package fr.cs.ontoeventb.core.rodinapi;
 
 import java.util.ArrayList;
 import org.rodinp.core.IRodinFile;

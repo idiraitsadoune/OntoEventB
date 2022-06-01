@@ -1,4 +1,4 @@
-package fr.cs.impex.pivotmodel.ontoml2pm;
+package fr.cs.ontoeventb.core.ontoml2pm;
 
 import java.util.Collections;
 import java.util.List;
@@ -10,9 +10,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
-import fr.cs.impex.pivotmodel.owl2pm.OwlModelApi;
-//import iso.std.iso.is._13584._32.ed._1.tech.xml.schema.ontoml.ONTOMLType;
-//import pivotmodel.Ontology;
+import fr.cs.ontoeventb.core.owl2pm.OwlModelApi;
 
 public class OntoMLToPmAction implements IObjectActionDelegate {
 

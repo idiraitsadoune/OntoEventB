@@ -1,4 +1,4 @@
-package fr.cs.impex.pivotmodel.pm2b;
+package fr.cs.ontoeventb.core.pm2b;
 
 import java.util.ArrayList;
 
@@ -8,9 +8,9 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
+import fr.cs.ontoeventb.core.rodinapi.RodinContext;
+import fr.cs.ontoeventb.core.rodinapi.RodinElement;
 import fr.cs.ontoeventb.pivotmodel.DSLStandaloneSetup;
-import fr.cs.rodindev.rodinapi.RodinContext;
-import fr.cs.rodindev.rodinapi.RodinElement;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;

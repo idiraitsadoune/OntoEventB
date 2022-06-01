@@ -1,4 +1,4 @@
-package fr.cs.impex.pivotmodel.ontoml2b;
+package fr.cs.ontoeventb.core.ontoml2b;
 
 import java.util.Collections;
 import java.util.List;
@@ -13,10 +13,10 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.rodinp.core.IRodinProject;
 import org.rodinp.core.RodinDBException;
 
-import fr.cs.impex.pivotmodel.ontoml2pm.OntoMLModelApi;
-import fr.cs.impex.pivotmodel.pm2b.PivotModelApi;
-import fr.cs.rodindev.rodinapi.RodinContext;
-import fr.cs.rodindev.rodinapi.RodinCreation;
+import fr.cs.ontoeventb.core.ontoml2pm.OntoMLModelApi;
+import fr.cs.ontoeventb.core.pm2b.PivotModelApi;
+import fr.cs.ontoeventb.core.rodinapi.RodinContext;
+import fr.cs.ontoeventb.core.rodinapi.RodinCreation;
 import pivotmodel.Ontology;
 
 public class OntoMLToEventBAction implements IObjectActionDelegate{

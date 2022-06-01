@@ -1,4 +1,4 @@
-package fr.cs.rodindev.rodinapi;
+package fr.cs.ontoeventb.core.rodinapi;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;

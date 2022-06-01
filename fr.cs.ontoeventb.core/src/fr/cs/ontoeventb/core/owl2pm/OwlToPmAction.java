@@ -1,4 +1,4 @@
-package fr.cs.impex.pivotmodel.owl2pm;
+package fr.cs.ontoeventb.core.owl2pm;
 
 //import java.io.ByteArrayInputStream;
 //import java.io.InputStream;
