@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
-
 import fr.cs.ontoeventb.pivotmodel.DSLStandaloneSetup;
 import pivotmodel.ClassDefinition;
 import pivotmodel.DataTypeDefinition;
@@ -66,7 +65,7 @@ public class PivotModelApi {
 		EList<ClassDefinition> classes = ontology.getContainedClasses();
 		for (ClassDefinition c : classes)
 			if (!PivotModelApi.usedClasses.contains(c))
-				res.append(PivotModelApi.computeClassDefinition(c));
+				res.append(PivotModelApi.computeClassDefinition(c, ontology));
 				
 		res.append("\n\nend") ;
 		return res ;
@@ -76,9 +75,9 @@ public class PivotModelApi {
 	 * Méthode pour traiter la description d'une classe
 	 * 
 	 * @param classDefinition
-	 * @param le contenu d'une classe
+	 * @return Le contenu de la théorie ISADOF
 	 ****************************************************/
-	public static StringBuffer computeClassDefinition(ClassDefinition c) {
+	public static StringBuffer computeClassDefinition(ClassDefinition c, Ontology o) {
 		usedClasses.add(c);
 		
 		StringBuffer res = new StringBuffer("\n\nonto_class " + c.getName() + " = ");
@@ -87,12 +86,35 @@ public class PivotModelApi {
 		if(! c.getSubClassOf().isEmpty()) {
 			ClassDefinition super_class = c.getSubClassOf().get(0) ; 
 			if (!PivotModelApi.usedClasses.contains(super_class)) 
-				buff = PivotModelApi.computeClassDefinition(super_class);
+				buff = PivotModelApi.computeClassDefinition(super_class, o);
 			res.append(super_class.getName() + " + ");
 		}
 		
 		res.append("\n    preferredName :: \"string\"  <= \"''" + c.getName() + "''\" ");
+		res.append(PivotModelApi.computeProperties(c, o));
 		
 		return buff.append(res) ;
+	}
+	
+	/******************************************************************
+	 * Méthode pour traiter la clause describedBy d'une classDefinition
+	 * 
+	 * @param classDefinition
+	 * @return Le contenu de la théorie ISADOF
+	 *******************************************************************/
+	public static StringBuffer computeProperties(ClassDefinition c, Ontology o) {
+		StringBuffer res = new StringBuffer("");
+		
+		for (PropertyDefinition p : c.getDescribedBy()) {
+			res.append("\n    " + p.getName() + " :: \"string\"");
+		}
+		
+		for(PropertyDefinition p : o.getContainedProperties()) {
+			if(p.getDomain().equals(c)) {
+				res.append("\n    " + p.getName() + " :: \"string\"");
+			}
+		}
+		
+		return res ;
 	}
 }
