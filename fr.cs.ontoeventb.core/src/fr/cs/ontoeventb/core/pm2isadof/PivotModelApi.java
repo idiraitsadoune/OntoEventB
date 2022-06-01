@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 import fr.cs.ontoeventb.pivotmodel.DSLStandaloneSetup;
 import pivotmodel.ClassDefinition;
+import pivotmodel.ClassType;
 import pivotmodel.DataTypeDefinition;
 import pivotmodel.Ontology;
 import pivotmodel.PropertyDefinition;
@@ -20,6 +21,7 @@ public class PivotModelApi {
 	private static ArrayList<ClassDefinition> usedClasses;
 	private static ArrayList<DataTypeDefinition> usedData;
 	private static ArrayList<PropertyDefinition> usedProperties;
+	private static StringBuffer file_content;
 
 	/***************************************************
 	 * Méthode pour lire un fichier .pm (Pivot Model)
@@ -53,9 +55,9 @@ public class PivotModelApi {
 	 * @return Le contenu de la théorie ISADOF
 	 ********************************************************************/
 	public static StringBuffer pivotModelToIsaDof(Ontology ontology) {
-		StringBuffer res = new StringBuffer("theory " + ontology.getName() + "\n");
-		res.append("\n	imports \"../../DOF/Isa_DOF\"  \"../../../../AFP/Physical_Quantities/SI_Pretty\"" + "\n") ;
-		res.append("\nbegin" + "\n");
+		file_content = new StringBuffer("theory " + ontology.getName() + "\n");
+		file_content.append("\n	imports \"../../DOF/Isa_DOF\"  \"../../../../AFP/Physical_Quantities/SI_Pretty\"" + "\n") ;
+		file_content.append("\nbegin" + "\n");
 		
 		PivotModelApi.usedClasses = new ArrayList<ClassDefinition>();
 		PivotModelApi.usedData = new ArrayList<DataTypeDefinition>();
@@ -65,10 +67,10 @@ public class PivotModelApi {
 		EList<ClassDefinition> classes = ontology.getContainedClasses();
 		for (ClassDefinition c : classes)
 			if (!PivotModelApi.usedClasses.contains(c))
-				res.append(PivotModelApi.computeClassDefinition(c, ontology));
+				file_content.append(PivotModelApi.computeClassDefinition(c, ontology));
 				
-		res.append("\n\nend") ;
-		return res ;
+		file_content.append("\n\nend") ;
+		return file_content ;
 	}
 	
 	/****************************************************
@@ -106,13 +108,44 @@ public class PivotModelApi {
 		StringBuffer res = new StringBuffer("");
 		
 		for (PropertyDefinition p : c.getDescribedBy()) {
-			res.append("\n    " + p.getName() + " :: \"string\"");
+			res.append("\n    " + p.getName() + " :: \"" + PivotModelApi.computeDataType(p,o) + "\"");
 		}
 		
 		for(PropertyDefinition p : o.getContainedProperties()) {
-			if(p.getDomain().equals(c)) {
-				res.append("\n    " + p.getName() + " :: \"string\"");
+			if(c.equals(p.getDomain())) {
+				res.append("\n    " + p.getName() + " :: \"" + PivotModelApi.computeDataType(p,o) + "\"");
 			}
+		}
+		
+		return res ;
+	}
+	
+	/******************************************************************
+	 * Méthode pour traiter la clause describedBy d'une classDefinition
+	 * 
+	 * @param classDefinition
+	 * @return Le contenu de la théorie ISADOF
+	 *******************************************************************/
+	public static StringBuffer computeDataType(PropertyDefinition p, Ontology o) {
+		StringBuffer res = new StringBuffer("string");
+		
+		if (p.getRange() != null) {
+			if ("TThing".equals(p.getRange().getName()))
+				res = new StringBuffer("string");
+			else if (p.getRange() instanceof ClassType) {
+				ClassDefinition c = ((ClassType) p.getRange()).getBasedOn() ;
+				if (!PivotModelApi.usedClasses.contains(c))
+					file_content.append(PivotModelApi.computeClassDefinition(c, o));
+				res = new StringBuffer(((ClassType) p.getRange()).getBasedOn().getName());
+			}
+			else if ("TString".equals(p.getRange().getName()))
+				res = new StringBuffer("string");
+			else if ("TBoolean".equals(p.getRange().getName()))
+				res = new StringBuffer("bool");
+			else if ("TInteger".equals(p.getRange().getName()))
+				res = new StringBuffer("int");
+			else if ("TNatural".equals(p.getRange().getName()))
+				res = new StringBuffer("nat");
 		}
 		
 		return res ;
