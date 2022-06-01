@@ -3,11 +3,13 @@ package fr.cs.ontoeventb.core.pm2isadof;
 import java.util.ArrayList;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
 
 import fr.cs.ontoeventb.pivotmodel.DSLStandaloneSetup;
 import pivotmodel.ClassDefinition;
@@ -51,12 +53,46 @@ public class PivotModelApi {
 	 * @param Ontology ontology
 	 * @return Le contenu de la théorie ISADOF
 	 ********************************************************************/
-	public static String pivotModelToIsaDof(Ontology ontology) {
-		String res = "theory " + ontology.getName() + "\n";
-		res = res + "	imports \"../../DOF/Isa_DOF\"  \"../../../../AFP/Physical_Quantities/SI_Pretty\"" + "\n";
-		res = res + "begin" + "\n";
+	public static StringBuffer pivotModelToIsaDof(Ontology ontology) {
+		StringBuffer res = new StringBuffer("theory " + ontology.getName() + "\n");
+		res.append("\n	imports \"../../DOF/Isa_DOF\"  \"../../../../AFP/Physical_Quantities/SI_Pretty\"" + "\n") ;
+		res.append("\nbegin" + "\n");
 		
-		res = res + "end" ;
+		PivotModelApi.usedClasses = new ArrayList<ClassDefinition>();
+		PivotModelApi.usedData = new ArrayList<DataTypeDefinition>();
+		PivotModelApi.usedProperties = new ArrayList<PropertyDefinition>();
+		
+		// traitement des classes
+		EList<ClassDefinition> classes = ontology.getContainedClasses();
+		for (ClassDefinition c : classes)
+			if (!PivotModelApi.usedClasses.contains(c))
+				res.append(PivotModelApi.computeClassDefinition(c));
+				
+		res.append("\n\nend") ;
 		return res ;
+	}
+	
+	/****************************************************
+	 * Méthode pour traiter la description d'une classe
+	 * 
+	 * @param classDefinition
+	 * @param le contenu d'une classe
+	 ****************************************************/
+	public static StringBuffer computeClassDefinition(ClassDefinition c) {
+		usedClasses.add(c);
+		
+		StringBuffer res = new StringBuffer("\n\nonto_class " + c.getName() + " = ");
+		StringBuffer buff = new StringBuffer(""); 
+		
+		if(! c.getSubClassOf().isEmpty()) {
+			ClassDefinition super_class = c.getSubClassOf().get(0) ; 
+			if (!PivotModelApi.usedClasses.contains(super_class)) 
+				buff = PivotModelApi.computeClassDefinition(super_class);
+			res.append(super_class.getName() + " + ");
+		}
+		
+		res.append("\n    preferredName :: \"string\"  <= \"''" + c.getName() + "''\" ");
+		
+		return buff.append(res) ;
 	}
 }

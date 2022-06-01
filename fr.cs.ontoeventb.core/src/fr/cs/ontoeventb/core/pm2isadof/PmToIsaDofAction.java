@@ -42,13 +42,16 @@ public class PmToIsaDofAction implements IObjectActionDelegate {
 				
 				try {
 					String file_name = location + ontology.getName() + ".thy";
-					String file_content = PivotModelApi.pivotModelToIsaDof(ontology);
-			
-					FileWriter theory = new FileWriter(file_name, true);
+					StringBuffer file_content = PivotModelApi.pivotModelToIsaDof(ontology);
+					
+					File new_file = new File(file_name);
+					new_file.delete();
+						
+					FileWriter theory = new FileWriter(new_file, true);
 				    BufferedWriter bw = new BufferedWriter(theory);
 				    PrintWriter pw = new PrintWriter(bw);
 				    
-				    pw.write(file_content);
+				    pw.write(file_content.toString());
 
 				    pw.close();
 				    bw.close();
